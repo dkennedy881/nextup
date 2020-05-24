@@ -17,7 +17,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "nextup"
+      "bundleIdentifier": "nextupqueuemember"
     }
   }
 }
