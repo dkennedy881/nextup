@@ -11,7 +11,7 @@ import Axios from "axios";
 
 //comps
 import HeaderContainer from "./components/Header/HeaderContainer";
-import ManageQueue from "./components/Queue/ManageQueue";
+import QueueList from "./components/Queue/QueuesList";
 //containers
 import SignUpContainer from "./components/SignUp/SignUpContainer";
 import LogInContainer from "./components/LogIn/LogInContainer";
@@ -181,50 +181,14 @@ export default class App extends Component {
   };
 
   render() {
-    let {
-      isLoggedIn,
-      isSignedUp,
-      queueMember,
-      queueData,
-      showSettings,
-    } = this.state;
-    let {
-      toggleLogIn,
-      toggleLogInSignUp,
-      toggleSettings,
-      updateUserQueue,
-    } = this;
-
-    if (isLoggedIn)
-      return (
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <View style={styles.loggedInContainer}>
-            <HeaderContainer
-              queueMember={false}
-              toggleLogIn={toggleLogIn}
-              toggleSettings={toggleSettings}
-            ></HeaderContainer>
-            <ManageQueue
-              showSettings={showSettings}
-              queueData={queueData}
-              updateUserQueue={updateUserQueue}
-            ></ManageQueue>
-          </View>
-        </TouchableWithoutFeedback>
-      );
-    else
-      return (
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <DisplayLogInSignUp
-            isSignedUp={isSignedUp}
-            toggleLogIn={toggleLogIn}
-            toggleLogInSignUp={toggleLogInSignUp}
-          ></DisplayLogInSignUp>
-        </TouchableWithoutFeedback>
-      );
+    return (
+      <View style={styles.loggedInContainer}>
+        <HeaderContainer queueMember={true}></HeaderContainer>
+        <QueueList />
+      </View>
+    );
   }
 }
-
 function DisplayLogInSignUp({ isSignedUp, toggleLogIn, toggleLogInSignUp }) {
   return (
     <View style={styles.loginSignUpContainer}>
