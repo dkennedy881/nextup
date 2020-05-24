@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   SafeAreaView,
   StyleSheet,
@@ -6,21 +6,27 @@ import {
   View,
   Text,
   TouchableOpacity,
-} from 'react-native';
+} from "react-native";
 
-function Queue({queue}) {
+function Queue({ queue }) {
   return (
     <View style={styles.QueueContainer}>
       <View style={styles.metaDataContainer}>
         <Text style={styles.titleText}>{queue.title}</Text>
-        <Text style={styles.messageText}>{queue.message}</Text>
+        {queue.message ? (
+          <Text style={styles.messageText}>{queue.message}</Text>
+        ) : null}
+        <View style={styles.addressContainer}>
+          <Text style={styles.addressText}>{queue.address}, </Text>
+          <Text style={styles.addressText}>{queue.zipCode}</Text>
+        </View>
         <View style={styles.hoursContainer}>
-        <Text style={styles.hoursText}>{queue.hours.open} -</Text>
-        <Text style={styles.hoursText}>{queue.hours.close}</Text>
+          <Text style={styles.hoursText}>{queue.hours.open} -</Text>
+          <Text style={styles.hoursText}>{queue.hours.close}</Text>
         </View>
       </View>
       <View style={styles.queueCountContainer}>
-        <Text style={styles.queueCountText}>100</Text>
+        <Text style={styles.queueCountText}>{queue.count}</Text>
       </View>
     </View>
   );
@@ -28,18 +34,18 @@ function Queue({queue}) {
 
 const styles = StyleSheet.create({
   QueueContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     padding: 15,
-    backgroundColor: '#f8f8f8',
+    backgroundColor: "#f8f8f8",
     borderBottomWidth: 1,
-    borderColor: '#eee',
+    borderColor: "#eee",
     marginBottom: 15,
     marginRight: 15,
     marginLeft: 15,
     marginTop: 15,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -52,43 +58,57 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 18,
-    color: 'black',
-    fontWeight:"600",
-    marginBottom:5
+    color: "black",
+    fontWeight: "600",
   },
-  messageText:{
+  messageText: {
     fontSize: 15,
-    color: 'black',
-    fontWeight:"200",
-    marginBottom:5
+    color: "black",
+    fontWeight: "300",
+    marginTop: 15,
+    marginBottom: 10,
   },
-  hoursText:{
+  hoursText: {
+    fontSize: 12,
+    color: "green",
+    fontWeight: "200",
+  },
+  hoursContainer: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  addressContainer: {
+    display: "flex",
+    flexDirection: "row",
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  addressText: {
     fontSize: 15,
-    color: 'grey',
-    fontWeight:"300"
-  },
-  hoursContainer:{
-    display:"flex",
-    flexDirection:"row"
+    color: "grey",
+    fontWeight: "300",
   },
   metaDataContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    flex:1,
-    marginRight:20
+    display: "flex",
+    flexDirection: "column",
+    flex: 1,
+    marginRight: 20,
   },
-  queueCountContainer:{
-    borderStyle:"solid",
-    borderColor:"red",
-    borderWidth:.5,
-    borderRadius:5,
-    width:50
-
+  queueCountContainer: {
+    // borderStyle: "solid",
+    // borderColor: "red",
+    color: "white",
+    // borderWidth: 0.5,
+    borderRadius: 5,
+    width: 50,
+    backgroundColor: "#8ecfd4",
   },
-  queueCountText:{
-    padding:10,
-    textAlign:"center"
-  }
+  queueCountText: {
+    padding: 10,
+    textAlign: "center",
+    color: "white",
+    fontWeight: "900",
+  },
 });
 
 export default Queue;
