@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "nextup_manager",
-    "slug": "nextup_manager",
+    "name": "nextup",
+    "slug": "nextup",
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
