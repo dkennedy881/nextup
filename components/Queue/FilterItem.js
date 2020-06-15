@@ -8,30 +8,16 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-function Queue({ queue, selectQueue }) {
+function FilterItem({ name, setHandler }) {
   return (
     <TouchableOpacity
       onPress={() => {
-        selectQueue(queue.id);
+        setHandler(name);
       }}
     >
       <View style={styles.QueueContainer}>
         <View style={styles.metaDataContainer}>
-          <Text style={styles.titleText}>{queue.title}</Text>
-          {queue.message ? (
-            <Text style={styles.messageText}>{queue.message}</Text>
-          ) : null}
-          <View style={styles.addressContainer}>
-            <Text style={styles.addressText}>{queue.address}, </Text>
-            <Text style={styles.addressText}>{queue.zipCode}</Text>
-          </View>
-          <View style={styles.hoursContainer}>
-            <Text style={styles.hoursText}>{queue.hours.open} -</Text>
-            <Text style={styles.hoursText}>{queue.hours.close}</Text>
-          </View>
-        </View>
-        <View style={styles.queueCountContainer}>
-          <Text style={styles.queueCountText}>{queue.count}</Text>
+          <Text style={styles.titleText}>{name}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -66,6 +52,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "black",
     fontWeight: "600",
+    textAlign: "center",
   },
   messageText: {
     fontSize: 15,
@@ -117,4 +104,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Queue;
+export default FilterItem;
