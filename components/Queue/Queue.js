@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     color: "white",
     // borderWidth: 0.5,
     borderRadius: 5,
-    width: 50,
+    minWidth: 50,
     backgroundColor: "#8ecfd4",
   },
   queueCountText: {

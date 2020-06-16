@@ -88,11 +88,15 @@ class QueuesList extends Component {
     this.setState({ selectedQueue: selected });
   };
 
-  unSelectState = () => {
+  unSelectState = async () => {
     this.setState({ selectedState: false });
+    await this.setState({ isRefreshing: true });
+    this.onRefresh();
   };
-  unSelectCity = () => {
+  unSelectCity = async () => {
     this.setState({ selectedCity: false });
+    await this.setState({ isRefreshing: true });
+    this.onRefresh();
   };
   unSelectQueue = () => {
     this.setState({ selectedQueue: false });
@@ -245,7 +249,13 @@ class QueuesList extends Component {
       selectCity,
     } = this;
     return (
-      <SafeAreaView style={{ flex: 1, display: "flex" }}>
+      <SafeAreaView
+        style={{
+          flex: 1,
+          display: "flex",
+          backgroundColor: `${selectedQueue ? "#919191" : "#fbfbfb"}`,
+        }}
+      >
         {selectedState ? (
           selectedCity ? (
             <TouchableOpacity
@@ -254,7 +264,11 @@ class QueuesList extends Component {
               }}
             >
               <Text
-                style={styles.metaSectionFilter}
+                style={
+                  selectedQueue
+                    ? styles.metaSectionFilterHide
+                    : styles.metaSectionFilter
+                }
               >{`Showing queues in ${selectedCity}, ${selectedState}. Press here to remove ${selectedCity} filter`}</Text>
             </TouchableOpacity>
           ) : (
@@ -331,12 +345,13 @@ class QueuesList extends Component {
               backgroundColor: "white",
               position: "absolute",
               top: 20,
-              height: "100%",
+              height: "103%",
               zIndex: 1000,
               borderTopRightRadius: 9,
               borderTopLeftRadius: 9,
               borderWidth: 1,
               borderColor: "white",
+              paddingBottom: 20,
             }}
           >
             <View
@@ -359,7 +374,21 @@ class QueuesList extends Component {
                 }}
               >
                 <Icon
-                  style={{ marginRight: 5, marginTop: 3 }}
+                  style={{
+                    marginRight: 5,
+                    marginTop: 3,
+
+                    shadowColor: "#eee",
+                    shadowOffset: {
+                      width: 1,
+                      height: 1,
+                    },
+                    shadowOpacity: 0.25,
+                    shadowRadius: 0.84,
+
+                    elevation: 1,
+                    borderRadius: 9,
+                  }}
                   name={"times-circle"}
                   type="font-awesome"
                   color="#6da8bd"
@@ -369,6 +398,11 @@ class QueuesList extends Component {
             </View>
 
             <ScrollView>
+              <View style={styles.metaSectionCenter}>
+                <View style={styles.metaSectionCenterContent}>
+                  <Text style={styles.countText}>{selectedQueue.count}</Text>
+                </View>
+              </View>
               <View style={styles.metaSection}>
                 <Text style={styles.metaSectionTitle}>Masks Required</Text>
                 <View
@@ -559,6 +593,70 @@ const styles = StyleSheet.create({
     elevation: 1,
     borderRadius: 9,
   },
+  metaSectionCenter: {
+    padding: 15,
+    marginBottom: 5,
+    marginRight: 15,
+    marginLeft: 15,
+    marginTop: 5,
+    display: "flex",
+    flexDirection: "row",
+    alignContent: "center",
+    justifyContent: "center",
+  },
+  metaSectionCenterContent: {
+    padding: 15,
+    backgroundColor: "#8ecfd4",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 0.1,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 0.84,
+
+    elevation: 1,
+    borderRadius: 9,
+    // width: "50%",
+    minWidth: 100,
+    height: 100,
+    // marginLeft: 50,
+    // marginRight: 50,
+    marginBottom: -10,
+  },
+  countTextContainer: {
+    paddingTop: 50,
+    paddingBottom: 50,
+    backgroundColor: "#6da8bd",
+    borderTopRightRadius: 9,
+    borderTopLeftRadius: 9,
+  },
+  countText: {
+    fontSize: 60,
+    textAlign: "center",
+    color: "white",
+  },
+  metaSectionFilterHide: {
+    padding: 15,
+    backgroundColor: "#a8a8a8",
+    borderBottomWidth: 1,
+    borderColor: "#eee",
+    marginBottom: 5,
+    marginRight: 15,
+    marginLeft: 15,
+    marginTop: 5,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 0.1,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 0.84,
+
+    elevation: 1,
+    borderRadius: 9,
+    textAlign: "center",
+  },
   metaSectionFilter: {
     padding: 15,
     backgroundColor: "#f8f8f8",
@@ -580,6 +678,7 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     textAlign: "center",
   },
+
   metaSectionLast: {
     padding: 15,
     marginBottom: 100,
