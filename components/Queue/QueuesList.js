@@ -33,26 +33,51 @@ class QueuesList extends Component {
       selectedState: false,
       cities: false,
       selectedCity: false,
+      filteredQueues: false,
     };
   }
 
-  selectState = (stateName) => {
-    let cities = this.state.queues
-      .map((q) => {
-        if (q.state === stateName) return q.city;
-      })
-      .reduce((acc, cur) => {
-        if (!acc.includes(cur)) {
-          acc.push(cur);
+  selectState = async (stateName) => {
+    let queues = [];
+    try {
+      queues = await this.getQueues();
+    } catch (e) {
+      alert(e);
+    }
+    let cities = queues.reduce((acc, cur) => {
+      if (cur.state === stateName) {
+        if (!acc.includes(cur.city)) {
+          acc.push(cur.city);
         }
-        return acc;
-      }, []);
-
-    this.setState({ selectedState: stateName, cities: cities });
+      }
+      return acc;
+    }, []);
+    this.setState({
+      selectedState: stateName,
+      queues,
+      cities: cities,
+      isRefreshing: false,
+    });
   };
 
-  selectCity = (cityName) => {
-    this.setState({ selectedCity: cityName });
+  selectCity = async (cityName) => {
+    let queues = [];
+    try {
+      queues = await this.getQueues();
+    } catch (e) {
+      alert(e);
+    }
+    let filteredQueues = queues.reduce((acc, cur) => {
+      if (this.state.selectedState === cur.state && cityName === cur.city) {
+        acc.push(cur);
+      }
+      return acc;
+    }, []);
+    this.setState({
+      selectedCity: cityName,
+      filteredQueues,
+      isRefreshing: false,
+    });
   };
 
   selectQueue = (id) => {
@@ -75,16 +100,59 @@ class QueuesList extends Component {
 
   onRefresh = async () => {
     await this.setState({ isRefreshing: true });
+
+    if (!this.state.selectedState) {
+      let queues = [];
+      try {
+        queues = await this.getQueues();
+      } catch (e) {
+        alert(e);
+      }
+      let states = queues
+        .map((q) => {
+          return q.state;
+        })
+        .reduce((acc, cur) => {
+          if (!acc.includes(cur)) {
+            acc.push(cur);
+          }
+          return acc;
+        }, []);
+      setTimeout(() => {
+        this.setState((state) => ({
+          ...state,
+          states,
+          isRefreshing: false,
+        }));
+      }, 500);
+      return;
+    }
+    if (!this.state.selectedCity) {
+      setTimeout(() => {
+        this.selectState(this.state.selectedState, queues);
+      }, 500);
+      return;
+    }
     let queues = [];
     try {
       queues = await this.getQueues();
     } catch (e) {
       alert(e);
     }
+    let filteredQueues = queues.reduce((acc, cur) => {
+      if (
+        this.state.selectedState === cur.state &&
+        this.state.selectedCity === cur.city
+      ) {
+        acc.push(cur);
+      }
+      return acc;
+    }, []);
     setTimeout(() => {
       this.setState((state) => ({
         ...state,
         queues,
+        filteredQueues,
         isSet: !state.isSet,
         isRefreshing: false,
       }));
@@ -165,6 +233,7 @@ class QueuesList extends Component {
       selectedState,
       cities,
       selectedCity,
+      filteredQueues,
     } = this.state;
     let {
       onRefresh,
@@ -176,7 +245,7 @@ class QueuesList extends Component {
       selectCity,
     } = this;
     return (
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1, display: "flex" }}>
         {selectedState ? (
           selectedCity ? (
             <TouchableOpacity
@@ -208,50 +277,52 @@ class QueuesList extends Component {
             <RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />
           }
         >
-          {selectedState ? (
-            selectedCity ? (
-              <FlatList
-                data={queues}
-                renderItem={({ item }) => (
-                  <Queue
-                    selectQueue={selectQueue}
-                    unSelectQueue={unSelectQueue}
-                    key={item.id}
-                    queue={item}
-                  />
-                )}
-                keyExtractor={(item) => String(item.id)}
-              />
+          <View>
+            {selectedState ? (
+              selectedCity ? (
+                <FlatList
+                  data={filteredQueues}
+                  renderItem={({ item }) => (
+                    <Queue
+                      selectQueue={selectQueue}
+                      unSelectQueue={unSelectQueue}
+                      key={item.id}
+                      queue={item}
+                    />
+                  )}
+                  keyExtractor={(item) => String(item.id)}
+                />
+              ) : (
+                <FlatList
+                  data={cities}
+                  renderItem={({ item }) => (
+                    <FilterItem
+                      selectQueue={selectQueue}
+                      unSelectQueue={unSelectCity}
+                      key={item}
+                      name={item}
+                      setHandler={selectCity}
+                    />
+                  )}
+                  keyExtractor={(item) => String(item)}
+                />
+              )
             ) : (
               <FlatList
-                data={cities}
+                data={states}
                 renderItem={({ item }) => (
                   <FilterItem
                     selectQueue={selectQueue}
-                    unSelectQueue={unSelectCity}
+                    unSelectQueue={unSelectQueue}
                     key={item}
                     name={item}
-                    setHandler={selectCity}
+                    setHandler={selectState}
                   />
                 )}
                 keyExtractor={(item) => String(item)}
               />
-            )
-          ) : (
-            <FlatList
-              data={states}
-              renderItem={({ item }) => (
-                <FilterItem
-                  selectQueue={selectQueue}
-                  unSelectQueue={unSelectQueue}
-                  key={item}
-                  name={item}
-                  setHandler={selectState}
-                />
-              )}
-              keyExtractor={(item) => String(item)}
-            />
-          )}
+            )}
+          </View>
         </ScrollView>
         {selectedQueue ? (
           <View
@@ -430,15 +501,6 @@ class QueuesList extends Component {
                   </Text>
                 </View>
               </View>
-
-              {/* <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <Text style={styles.titleText}>{selectedQueue.title}</Text>
-            </View> */}
             </ScrollView>
           </View>
         ) : (
