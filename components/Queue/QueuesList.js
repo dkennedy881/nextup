@@ -5,6 +5,7 @@ import { Icon } from "react-native-elements";
 //comps
 import Queue from "./Queue";
 import FilterItem from "./FilterItem";
+import HeaderContainer from "../Header/HeaderContainer";
 
 import {
   SafeAreaView,
@@ -12,11 +13,7 @@ import {
   ScrollView,
   View,
   Text,
-  StatusBar,
-  Image,
   FlatList,
-  ListItem,
-  ImageBackground,
   RefreshControl,
   TouchableOpacity,
 } from "react-native";
@@ -29,38 +26,14 @@ class QueuesList extends Component {
       isSet: false,
       isRefreshing: false,
       selectedQueue: false,
-      states: [],
-      selectedState: false,
-      cities: false,
-      selectedCity: false,
+      locationObjs: false,
+      selectedLocationObj: false,
+      selectedLocationObjReal: false,
       filteredQueues: false,
     };
   }
 
-  selectState = async (stateName) => {
-    let queues = [];
-    try {
-      queues = await this.getQueues();
-    } catch (e) {
-      alert(e);
-    }
-    let cities = queues.reduce((acc, cur) => {
-      if (cur.state === stateName) {
-        if (!acc.includes(cur.city)) {
-          acc.push(cur.city);
-        }
-      }
-      return acc;
-    }, []);
-    this.setState({
-      selectedState: stateName,
-      queues,
-      cities: cities,
-      isRefreshing: false,
-    });
-  };
-
-  selectCity = async (cityName) => {
+  selectLocation = async (location) => {
     let queues = [];
     try {
       queues = await this.getQueues();
@@ -68,99 +41,86 @@ class QueuesList extends Component {
       alert(e);
     }
     let filteredQueues = queues.reduce((acc, cur) => {
-      if (this.state.selectedState === cur.state && cityName === cur.city) {
+      if (cur.state === location.state && cur.city === location.city) {
+        acc.push(cur);
+      }
+      if (
+        (cur.city === "" || cur.city === null) &&
+        location.city === "City Not Specified"
+      ) {
         acc.push(cur);
       }
       return acc;
     }, []);
     this.setState({
-      selectedCity: cityName,
       filteredQueues,
+      selectedLocationObj: `${location.city}, ${location.state}`,
+      selectedLocationObjReal: JSON.parse(JSON.stringify(location)),
       isRefreshing: false,
     });
   };
 
-  selectQueue = (id) => {
-    const { queues } = this.state;
+  selectQueue = async (id) => {
+    let queues;
+    try {
+      queues = await this.getQueues();
+    } catch (e) {
+      alert(e);
+    }
     const selected = queues.filter((q) => {
       return q.id === id;
     })[0];
     this.setState({ selectedQueue: selected });
   };
 
-  unSelectState = async () => {
-    this.setState({ selectedState: false });
-    await this.setState({ isRefreshing: true });
-    this.onRefresh();
-  };
-  unSelectCity = async () => {
-    this.setState({ selectedCity: false });
-    await this.setState({ isRefreshing: true });
-    this.onRefresh();
+  unSelectLocation = async () => {
+    await this.setState({
+      selectedLocationObj: false,
+      selectedLocationObjReal: false,
+    });
   };
   unSelectQueue = () => {
     this.setState({ selectedQueue: false });
+    this.onRefresh();
   };
 
   onRefresh = async () => {
     await this.setState({ isRefreshing: true });
 
-    if (!this.state.selectedState) {
-      let queues = [];
-      try {
-        queues = await this.getQueues();
-      } catch (e) {
-        alert(e);
-      }
-      let states = queues
-        .map((q) => {
-          return q.state;
-        })
-        .reduce((acc, cur) => {
-          if (!acc.includes(cur)) {
-            acc.push(cur);
-          }
-          return acc;
-        }, []);
-      setTimeout(() => {
-        this.setState((state) => ({
-          ...state,
-          states,
-          isRefreshing: false,
-        }));
-      }, 500);
-      return;
-    }
-    if (!this.state.selectedCity) {
-      setTimeout(() => {
-        this.selectState(this.state.selectedState, queues);
-      }, 500);
-      return;
-    }
     let queues = [];
+    let locationObjs;
     try {
       queues = await this.getQueues();
     } catch (e) {
       alert(e);
     }
-    let filteredQueues = queues.reduce((acc, cur) => {
-      if (
-        this.state.selectedState === cur.state &&
-        this.state.selectedCity === cur.city
-      ) {
-        acc.push(cur);
-      }
-      return acc;
-    }, []);
+
+    if (this.state.selectedLocationObj) {
+      this.selectLocation(this.state.selectedLocationObjReal);
+      return;
+    } else {
+      locationObjs = queues.reduce((acc, cur) => {
+        const newObj = {
+          city: cur.city ? cur.city : "City Not Specified",
+          state: cur.state,
+        };
+        if (!this.containsObj(newObj, acc)) {
+          acc.push(newObj);
+        }
+        return acc;
+      }, []);
+    }
+
     setTimeout(() => {
       this.setState((state) => ({
         ...state,
         queues,
-        filteredQueues,
+        filteredQueues: queues,
+        locationObjs,
         isSet: !state.isSet,
         isRefreshing: false,
       }));
-    }, 500);
+    }, 1000);
   };
 
   getQueues = () => {
@@ -201,25 +161,37 @@ class QueuesList extends Component {
     });
   };
 
+  containsObj(obj, list) {
+    var i;
+    for (i = 0; i < list.length; i++) {
+      if (JSON.stringify(list[i]) === JSON.stringify(obj)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   async componentDidMount() {
     if (!this.state.isSet) {
       try {
         let queues = await this.getQueues();
-        let states = queues
-          .map((q) => {
-            return q.state;
-          })
-          .reduce((acc, cur) => {
-            if (!acc.includes(cur)) {
-              acc.push(cur);
-            }
-            return acc;
-          }, []);
+
+        let locationObjs = queues.reduce((acc, cur) => {
+          const newObj = {
+            city: cur.city ? cur.city : "City Not Specified",
+            state: cur.state,
+          };
+          if (!this.containsObj(newObj, acc)) {
+            acc.push(newObj);
+          }
+          return acc;
+        }, []);
 
         this.setState((state) => ({
           ...state,
+          locationObjs,
           queues,
-          states,
           isSet: !state.isSet,
         }));
       } catch (e) {
@@ -230,70 +202,58 @@ class QueuesList extends Component {
 
   render() {
     let {
-      queues,
       isRefreshing,
       selectedQueue,
-      states,
-      selectedState,
-      cities,
-      selectedCity,
+      locationObjs,
       filteredQueues,
+      selectedLocationObj,
     } = this.state;
     let {
       onRefresh,
       selectQueue,
       unSelectQueue,
-      selectState,
-      unSelectState,
-      unSelectCity,
-      selectCity,
+      unSelectLocation,
+      selectLocation,
     } = this;
     return (
-      <SafeAreaView
-        style={{
-          flex: 1,
-          display: "flex",
-          backgroundColor: `${selectedQueue ? "#919191" : "#fbfbfb"}`,
-        }}
-      >
-        {selectedState ? (
-          selectedCity ? (
-            <TouchableOpacity
-              onPress={() => {
-                unSelectCity();
-              }}
-            >
-              <Text
-                style={
-                  selectedQueue
-                    ? styles.metaSectionFilterHide
-                    : styles.metaSectionFilter
-                }
-              >{`Showing queues in ${selectedCity}, ${selectedState}. Press here to remove ${selectedCity} filter`}</Text>
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity
-              onPress={() => {
-                unSelectState();
-              }}
-            >
-              <Text
-                style={styles.metaSectionFilter}
-              >{`Select a city below or press here to remove ${selectedState} filter`}</Text>
-            </TouchableOpacity>
-          )
-        ) : (
-          <Text style={styles.metaSectionFilter}>{"Select a state"}</Text>
-        )}
-        <ScrollView
-          contentContainerStyle={styles.QueuesListContainer}
-          refreshControl={
-            <RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />
-          }
+      <React.Fragment>
+        <HeaderContainer
+          unSelectLocation={unSelectLocation}
+          selectedLocationObj={selectedLocationObj}
+          queueMember={true}
+          selectedQueue={selectedQueue}
+        ></HeaderContainer>
+
+        <SafeAreaView
+          style={{
+            flex: 1,
+            display: "flex",
+            backgroundColor: `${selectedQueue ? "#9191" : "#f5f5f5"}`,
+          }}
         >
-          <View>
-            {selectedState ? (
-              selectedCity ? (
+          <ScrollView
+            contentContainerStyle={styles.QueuesListContainer}
+            refreshControl={
+              <RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />
+            }
+          >
+            <View>
+              {selectedLocationObj === false ? (
+                <FlatList
+                  data={locationObjs}
+                  renderItem={({ item }) => (
+                    <FilterItem
+                      selectQueue={selectQueue}
+                      unSelectQueue={unSelectLocation}
+                      key={`${item.city}-${item.state}`}
+                      name={`${item.city}, ${item.state}`}
+                      obj={{ city: item.city, state: item.state }}
+                      setHandler={selectLocation}
+                    />
+                  )}
+                  keyExtractor={(item) => String(`${item.city}-${item.state}`)}
+                />
+              ) : (
                 <FlatList
                   data={filteredQueues}
                   renderItem={({ item }) => (
@@ -306,241 +266,236 @@ class QueuesList extends Component {
                   )}
                   keyExtractor={(item) => String(item.id)}
                 />
-              ) : (
-                <FlatList
-                  data={cities}
-                  renderItem={({ item }) => (
-                    <FilterItem
-                      selectQueue={selectQueue}
-                      unSelectQueue={unSelectCity}
-                      key={item}
-                      name={item}
-                      setHandler={selectCity}
-                    />
-                  )}
-                  keyExtractor={(item) => String(item)}
-                />
-              )
-            ) : (
-              <FlatList
-                data={states}
-                renderItem={({ item }) => (
-                  <FilterItem
-                    selectQueue={selectQueue}
-                    unSelectQueue={unSelectQueue}
-                    key={item}
-                    name={item}
-                    setHandler={selectState}
-                  />
-                )}
-                keyExtractor={(item) => String(item)}
-              />
-            )}
-          </View>
-        </ScrollView>
-        {selectedQueue ? (
-          <View
-            style={{
-              width: "100%",
-              backgroundColor: "white",
-              position: "absolute",
-              top: 20,
-              height: "103%",
-              zIndex: 1000,
-              borderTopRightRadius: 9,
-              borderTopLeftRadius: 9,
-              borderWidth: 1,
-              borderColor: "white",
-              paddingBottom: 20,
-            }}
-          >
+              )}
+            </View>
+          </ScrollView>
+          {selectedQueue ? (
             <View
               style={{
-                display: "flex",
-                flexDirection: "row",
-                borderTopColor: "white",
-                borderRightColor: "white",
-                borderLeftColor: "white",
-                borderBottomColor: "#f1f1f1",
+                width: "100%",
+                backgroundColor: "#f5f5f5",
+                position: "absolute",
+                top: "-7%",
+                height: "112.5%",
+                zIndex: 1000,
+                borderTopRightRadius: 9,
+                borderTopLeftRadius: 9,
                 borderWidth: 1,
-                padding: 5,
+                borderColor: "white",
+                paddingBottom: 20,
               }}
             >
-              <View style={{ width: 30 }}></View>
-              <Text style={styles.titleText}>{selectedQueue.title}</Text>
-              <TouchableOpacity
-                onPress={() => {
-                  unSelectQueue();
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  borderTopColor: "white",
+                  borderRightColor: "white",
+                  borderLeftColor: "white",
+                  borderTopRightRadius: 9,
+                  borderTopLeftRadius: 9,
+                  borderBottomColor: "",
+                  backgroundColor: "white",
+                  padding: 5,
+                  borderWidth: 1,
+                  borderColor: "#eee",
+                  alignContent: "center",
+                  shadowColor: "#f5f5f5",
+                  shadowOffset: {
+                    width: 0,
+                    height: 2,
+                  },
+                  shadowRadius: 0.5,
+                  shadowOpacity: 1,
                 }}
               >
-                <Icon
-                  style={{
-                    marginRight: 5,
-                    marginTop: 3,
-
-                    shadowColor: "#eee",
-                    shadowOffset: {
-                      width: 1,
-                      height: 1,
-                    },
-                    shadowOpacity: 0.25,
-                    shadowRadius: 0.84,
-
-                    elevation: 1,
-                    borderRadius: 9,
+                <View style={{ width: 30 }}></View>
+                <View style={{ flex: 1, height: 50 }}>
+                  <Text style={styles.titleText}>{selectedQueue.title}</Text>
+                  <Text style={styles.titleTextSub}>
+                    {`${selectedQueue.address}, ${selectedQueue.zipCode}`}
+                  </Text>
+                </View>
+                <TouchableOpacity
+                  onPress={() => {
+                    unSelectQueue();
                   }}
-                  name={"times-circle"}
-                  type="font-awesome"
-                  color="#6da8bd"
-                  size={30}
-                />
-              </TouchableOpacity>
+                >
+                  <Icon
+                    style={{
+                      marginRight: 5,
+                      marginTop: 3,
+
+                      shadowColor: "#eee",
+                      shadowOffset: {
+                        width: 1,
+                        height: 1,
+                      },
+                      shadowOpacity: 0.25,
+                      shadowRadius: 0.84,
+
+                      elevation: 1,
+                      borderRadius: 9,
+                    }}
+                    name={"times-circle"}
+                    type="font-awesome"
+                    color="salmon"
+                    size={30}
+                  />
+                </TouchableOpacity>
+              </View>
+
+              <ScrollView>
+                <View style={styles.metaSectionCenter}>
+                  <View style={styles.metaSectionCenterContent}>
+                    <Text style={styles.countText}>{selectedQueue.count}</Text>
+                    <Text style={styles.countTextSub}>{"in line"}</Text>
+                  </View>
+                </View>
+                <View style={styles.metaSectionNoBg}>
+                  <Text style={styles.metaSectionTitleNoBg}>What to Know</Text>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>Masks Required</Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.metaSectionData}>
+                      {selectedQueue.mask ? "Yes" : "No"}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>
+                    Sanitizer Available
+                  </Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.metaSectionData}>
+                      {selectedQueue.sani ? "Yes" : "No"}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>Max Capacity</Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.maxCount}>
+                      {selectedQueue.maxCount
+                        ? selectedQueue.maxCount
+                        : "Not Specified"}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>Business Message</Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.metaSectionData}>
+                      {selectedQueue.message}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>Hours</Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.metaSectionData}>
+                      {selectedQueue.hours.open} - {selectedQueue.hours.close}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>Phone Number</Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.metaSectionData}>
+                      {selectedQueue.businessNumber}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>City</Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.metaSectionData}>
+                      {selectedQueue.city}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>State</Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.metaSectionData}>
+                      {selectedQueue.state}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>Address</Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.metaSectionData}>
+                      {selectedQueue.address}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>Zipcode</Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.metaSectionData}>
+                      {selectedQueue.zipCode}
+                    </Text>
+                  </View>
+                </View>
+              </ScrollView>
             </View>
-
-            <ScrollView>
-              <View style={styles.metaSectionCenter}>
-                <View style={styles.metaSectionCenterContent}>
-                  <Text style={styles.countText}>{selectedQueue.count}</Text>
-                </View>
-              </View>
-              <View style={styles.metaSection}>
-                <Text style={styles.metaSectionTitle}>Masks Required</Text>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  <Text style={styles.metaSectionData}>
-                    {selectedQueue.mask ? "Yes" : "No"}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.metaSection}>
-                <Text style={styles.metaSectionTitle}>Sanitizer Available</Text>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  <Text style={styles.metaSectionData}>
-                    {selectedQueue.sani ? "Yes" : "No"}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.metaSection}>
-                <Text style={styles.metaSectionTitle}>Max Capacity</Text>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  <Text style={styles.maxCount}>
-                    {selectedQueue.maxCount
-                      ? selectedQueue.maxCount
-                      : "Not Specified"}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.metaSection}>
-                <Text style={styles.metaSectionTitle}>Business Message</Text>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  <Text style={styles.metaSectionData}>
-                    {selectedQueue.message}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.metaSection}>
-                <Text style={styles.metaSectionTitle}>Hours</Text>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  <Text style={styles.metaSectionData}>
-                    {selectedQueue.hours.open} - {selectedQueue.hours.close}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.metaSection}>
-                <Text style={styles.metaSectionTitle}>Phone Number</Text>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  <Text style={styles.metaSectionData}>
-                    {selectedQueue.businessNumber}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.metaSection}>
-                <Text style={styles.metaSectionTitle}>City</Text>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  <Text style={styles.metaSectionData}>
-                    {selectedQueue.city}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.metaSection}>
-                <Text style={styles.metaSectionTitle}>State</Text>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  <Text style={styles.metaSectionData}>
-                    {selectedQueue.state}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.metaSection}>
-                <Text style={styles.metaSectionTitle}>Address</Text>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  <Text style={styles.metaSectionData}>
-                    {selectedQueue.address}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.metaSection}>
-                <Text style={styles.metaSectionTitle}>Zipcode</Text>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  <Text style={styles.metaSectionData}>
-                    {selectedQueue.zipCode}
-                  </Text>
-                </View>
-              </View>
-            </ScrollView>
-          </View>
-        ) : (
-          <></>
-        )}
-      </SafeAreaView>
+          ) : (
+            <></>
+          )}
+        </SafeAreaView>
+      </React.Fragment>
     );
   }
 }
@@ -573,14 +528,20 @@ const styles = StyleSheet.create({
     textAlign: "center",
     flex: 1,
   },
+  titleTextSub: {
+    fontSize: 10,
+    color: "black",
+    fontWeight: "300",
+    textAlign: "center",
+  },
   metaSection: {
     padding: 15,
-    backgroundColor: "#f8f8f8",
+    paddingLeft: 65,
+    paddingRight: 65,
+    backgroundColor: "white",
     borderBottomWidth: 1,
     borderColor: "#eee",
     marginBottom: 5,
-    marginRight: 15,
-    marginLeft: 15,
     marginTop: 5,
     shadowColor: "#000",
     shadowOffset: {
@@ -591,7 +552,13 @@ const styles = StyleSheet.create({
     shadowRadius: 0.84,
 
     elevation: 1,
-    borderRadius: 9,
+  },
+  metaSectionNoBg: {
+    padding: 15,
+    paddingLeft: 65,
+    paddingRight: 65,
+    marginBottom: -5,
+    marginTop: 5,
   },
   metaSectionCenter: {
     padding: 15,
@@ -618,8 +585,8 @@ const styles = StyleSheet.create({
     elevation: 1,
     borderRadius: 9,
     // width: "50%",
-    minWidth: 100,
-    height: 100,
+    minWidth: 110,
+    height: 110,
     // marginLeft: 50,
     // marginRight: 50,
     marginBottom: -10,
@@ -635,6 +602,11 @@ const styles = StyleSheet.create({
     fontSize: 60,
     textAlign: "center",
     color: "white",
+  },
+  countTextSub: {
+    fontSize: 15,
+    textAlign: "center",
+    color: "yellow",
   },
   metaSectionFilterHide: {
     padding: 15,
@@ -659,7 +631,7 @@ const styles = StyleSheet.create({
   },
   metaSectionFilter: {
     padding: 15,
-    backgroundColor: "#f8f8f8",
+    backgroundColor: "white",
     borderBottomWidth: 1,
     borderColor: "#eee",
     marginBottom: 5,
@@ -677,6 +649,13 @@ const styles = StyleSheet.create({
     elevation: 1,
     borderRadius: 9,
     textAlign: "center",
+  },
+
+  metaSectionFilterText: {
+    fontWeight: "700",
+    textAlign: "center",
+    marginTop: 10,
+    fontSize: 22,
   },
 
   metaSectionLast: {
@@ -704,6 +683,13 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginTop: 5,
     marginBottom: 5,
+  },
+  metaSectionTitleNoBg: {
+    fontWeight: "300",
+    marginTop: 5,
+    marginBottom: 5,
+    fontSize: 25,
+    textAlign: "center",
   },
   metaSectionData: {
     fontWeight: "300",

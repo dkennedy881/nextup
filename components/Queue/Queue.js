@@ -32,6 +32,7 @@ function Queue({ queue, selectQueue }) {
         </View>
         <View style={styles.queueCountContainer}>
           <Text style={styles.queueCountText}>{queue.count}</Text>
+          <Text style={styles.queueCountTextSub}>{"in line"}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: 15,
-    backgroundColor: "#f8f8f8",
+    backgroundColor: "white",
     borderBottomWidth: 1,
     borderColor: "#eee",
     marginBottom: 15,
@@ -76,8 +77,8 @@ const styles = StyleSheet.create({
   },
   hoursText: {
     fontSize: 12,
-    color: "green",
-    fontWeight: "200",
+    color: "salmon",
+    fontWeight: "900",
   },
   hoursContainer: {
     display: "flex",
@@ -106,14 +107,24 @@ const styles = StyleSheet.create({
     color: "white",
     // borderWidth: 0.5,
     borderRadius: 5,
-    minWidth: 50,
+    minWidth: 70,
+    minHeight: 70,
     backgroundColor: "#8ecfd4",
   },
   queueCountText: {
+    fontSize: 30,
     padding: 10,
+    paddingBottom: 0,
     textAlign: "center",
     color: "white",
     fontWeight: "900",
+  },
+  queueCountTextSub: {
+    fontSize: 12,
+    textAlign: "center",
+    color: "yellow",
+    // color: "#fefefe",
+    fontWeight: "500",
   },
 });
 

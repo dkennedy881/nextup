@@ -183,7 +183,6 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.loggedInContainer}>
-        <HeaderContainer queueMember={true}></HeaderContainer>
         <QueueList />
       </View>
     );

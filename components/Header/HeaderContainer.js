@@ -1,95 +1,98 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { Icon } from "react-native-elements";
 
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Image,
-  FlatList,
-  ListItem,
-  ImageBackground,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 
-function HeaderContainer({ queueMember, toggleSettings, toggleLogIn }) {
+function HeaderContainer({
+  toggleSettings,
+  selectedLocationObj,
+  unSelectLocation,
+  selectedQueue,
+}) {
   const [showSettings, setShowSettings] = useState(false);
 
-  function doToggleSettings() {
-    toggleSettings();
-    setShowSettings(!showSettings);
-  }
-
-  if (queueMember) {
-    return (
-      <View elevation={5} style={styles.HeaderContainer}>
-        <View style={styles.HeaderItems}>
-          <TouchableOpacity style={styles.HeaderItemSM}>
-            {/* <Image style={{width: 150, height: 40,left:5}} source={require('../../images/next-up_text-color.jpeg')} /> */}
-          </TouchableOpacity>
-          <View style={styles.TitleContainer}>
-            {/* <Text style={styles.TitleText}>Next Up</Text> */}
-            <Image
-              style={{ width: 150, height: 40 }}
-              source={require("../../images/next-up_text-color.jpeg")}
-            />
-          </View>
-          <TouchableOpacity style={styles.HeaderItemSM} />
+  return selectedLocationObj ? (
+    <View
+      style={
+        selectedQueue ? styles.HeaderContainerHide : styles.HeaderContainer
+      }
+    >
+      <View style={styles.HeaderItems}>
+        <TouchableOpacity
+          style={styles.HeaderItemSM}
+          onPress={() => {
+            unSelectLocation();
+          }}
+        ></TouchableOpacity>
+        <View style={styles.TitleContainer}>
+          <Text style={{ fontSize: 10 }}>{selectedLocationObj}</Text>
+          <Image
+            style={{ width: 120, height: 40 }}
+            source={require("../../images/next-up.png")}
+          />
         </View>
+        <TouchableOpacity style={styles.HeaderItemSM} />
       </View>
-    );
-  } else {
-    return (
-      <View elevation={5} style={styles.HeaderContainer}>
-        <View style={styles.HeaderItems}>
-          <TouchableOpacity
-            style={styles.HeaderItemSM}
-            onPress={() => toggleLogIn()}
+      <View>
+        <TouchableOpacity
+          style={{
+            position: "relative",
+            top: 30,
+            overflow: "visible",
+          }}
+          onPress={() => {
+            unSelectLocation();
+          }}
+        >
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
           >
-            <View
+            <Icon
+              name={"chevron-left"}
+              type="font-awesome"
+              color="#6da8bd"
+              size={23}
+              style={{ marginLeft: 10 }}
+            />
+            <Text
               style={{
-                display: "flex",
-                flexDirection: "row",
-                top: 10,
-                left: 10,
+                fontSize: 10,
+                marginLeft: 10,
+                fontWeight: "900",
+                color: "#6da8bd",
               }}
             >
-              <Icon
-                name={"power-off"}
-                type="font-awesome"
-                color="#6da8bd"
-                size={30}
-              />
-            </View>
-          </TouchableOpacity>
-          <View style={styles.TitleContainer}>
-            <Image
-              style={{ width: 150, height: 40 }}
-              source={require("../../images/next-up_text-color.jpeg")}
-            />
+              Back
+            </Text>
           </View>
-          <TouchableOpacity style={styles.HeaderItemSM}>
-            <View style={{ left: 25, top: 12 }}>
-              <Icon
-                name={showSettings ? "home" : "gear"}
-                type="font-awesome"
-                color="#6da8bd"
-                size={30}
-                onPress={() => doToggleSettings()}
-              />
-            </View>
-
-            {/* <Text style={styles.SettingsBtnText}>
-              {showSettings ? "Home" : "Settings"}
-            </Text> */}
-          </TouchableOpacity>
-        </View>
+        </TouchableOpacity>
       </View>
-    );
-  }
+    </View>
+  ) : (
+    <View style={styles.HeaderContainer}>
+      <View style={styles.HeaderItems}>
+        <TouchableOpacity
+          style={styles.HeaderItemSM}
+          onPress={() => {
+            unSelectLocation();
+          }}
+        ></TouchableOpacity>
+        <View style={styles.TitleContainer}>
+          {/* <Text style={styles.TitleText}>Next Up</Text> */}
+          <Text style={{ fontSize: 10 }}> </Text>
+          <Image
+            style={{ width: 120, height: 40 }}
+            source={require("../../images/next-up_text-color.jpeg")}
+          />
+        </View>
+        <TouchableOpacity style={styles.HeaderItemSM} />
+      </View>
+    </View>
+  );
 }
 
 const styles = {
@@ -97,23 +100,45 @@ const styles = {
     height: "11%",
     flexDirection: "column-reverse",
     backgroundColor: "white",
-    shadowColor: "#000000",
+    borderWidth: 1,
+    borderColor: "#eee",
+    alignContent: "center",
+    shadowColor: "red",
     shadowOffset: {
       width: 0,
-      height: 1,
+      height: 2,
     },
     shadowRadius: 4,
-    shadowOpacity: 0.2,
+    shadowOpacity: 5,
+  },
+  HeaderContainerHide: {
+    height: "11%",
+    flexDirection: "column-reverse",
+    backgroundColor: "#5a5a5a",
+    borderWidth: 1,
+    alignContent: "center",
+    shadowColor: "red",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowRadius: 4,
+    shadowOpacity: 5,
   },
   HeaderItems: {
     flexDirection: "row",
     justifyContent: "space-evenly",
     height: "50%",
   },
+  HeaderItemsR2: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+  },
   HeaderItemSM: {
     flex: 1,
     textAlign: "center",
     flexDirection: "column-reverse",
+    width: "33%",
     // paddingBottom:10
   },
   LogoBtnText: {

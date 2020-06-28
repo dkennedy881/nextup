@@ -8,11 +8,18 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-function FilterItem({ name, setHandler }) {
+function FilterItem({ name, setHandler, obj = null }) {
+  const handlePress = () => {
+    if (obj) {
+      setHandler(obj);
+    } else {
+      setHandler(name);
+    }
+  };
   return (
     <TouchableOpacity
       onPress={() => {
-        setHandler(name);
+        handlePress();
       }}
     >
       <View style={styles.QueueContainer}>
@@ -30,7 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: 15,
-    backgroundColor: "#f8f8f8",
+    backgroundColor: "white",
     borderBottomWidth: 1,
     borderColor: "#eee",
     marginBottom: 15,
@@ -50,8 +57,8 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 18,
-    color: "black",
-    fontWeight: "600",
+    color: "#24d7de",
+    fontWeight: "700",
     textAlign: "center",
   },
   messageText: {
