@@ -133,10 +133,17 @@ class QueuesList extends Component {
           let newJSON = {
             title: queueData.title,
             message: queueData.message,
-            hours: {
-              open: queueData.open,
-              close: queueData.close,
-            },
+            // hours: {
+            //   open: queueData.open,
+            //   close: queueData.close,
+            // },
+            monday: queueData.monday,
+            tuesday: queueData.tuesday,
+            wednesday: queueData.wednesday,
+            thursday: queueData.thursday,
+            friday: queueData.friday,
+            saturday: queueData.saturday,
+            sunday: queueData.sunday,
             active: queueData.active,
             count: queueData.count["$numberLong"],
             id: queueData.id["$numberLong"],
@@ -310,8 +317,10 @@ class QueuesList extends Component {
                 }}
               >
                 <View style={{ width: 30 }}></View>
-                <View style={{ flex: 1, height: 50 }}>
-                  <Text style={styles.titleText}>{selectedQueue.title}</Text>
+                <View style={{ flex: 1, minHeight: 50 }}>
+                  <View style={{ display: "flex", flexDirection: "row" }}>
+                    <Text style={styles.titleText}>{selectedQueue.title}</Text>
+                  </View>
                   <Text style={styles.titleTextSub}>
                     {`${selectedQueue.address}, ${selectedQueue.zipCode}`}
                   </Text>
@@ -412,16 +421,260 @@ class QueuesList extends Component {
                   </View>
                 </View>
                 <View style={styles.metaSection}>
-                  <Text style={styles.metaSectionTitle}>Hours</Text>
+                  <Text style={styles.metaSectionTitle}>
+                    Hours of Operation
+                  </Text>
                   <View
                     style={{
                       display: "flex",
                       flexDirection: "row",
                     }}
                   >
-                    <Text style={styles.metaSectionData}>
-                      {selectedQueue.hours.open} - {selectedQueue.hours.close}
-                    </Text>
+                    <View>
+                      <View style={{ width: "100%", flexDirection: "row" }}>
+                        <Text
+                          style={{
+                            width: 110,
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          Monday
+                        </Text>
+                        <Text
+                          style={{
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          {selectedQueue.monday.active
+                            ? selectedQueue.monday.open +
+                              " - " +
+                              selectedQueue.monday.close
+                            : "Closed"}
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <View>
+                      <View style={{ width: "100%", flexDirection: "row" }}>
+                        <Text
+                          style={{
+                            width: 110,
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          Tuesday
+                        </Text>
+                        <Text
+                          style={{
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          {selectedQueue.tuesday.active
+                            ? selectedQueue.tuesday.open +
+                              " - " +
+                              selectedQueue.tuesday.close
+                            : "Closed"}
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <View>
+                      <View style={{ width: "100%", flexDirection: "row" }}>
+                        <Text
+                          style={{
+                            width: 110,
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          Wednesday
+                        </Text>
+                        <Text
+                          style={{
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          {selectedQueue.wednesday.active
+                            ? selectedQueue.wednesday.open +
+                              " - " +
+                              selectedQueue.wednesday.close
+                            : "Closed"}
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <View>
+                      <View style={{ width: "100%", flexDirection: "row" }}>
+                        <Text
+                          style={{
+                            width: 110,
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          Thursday
+                        </Text>
+                        <Text
+                          style={{
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          {selectedQueue.thursday.active
+                            ? selectedQueue.thursday.open +
+                              " - " +
+                              selectedQueue.thursday.close
+                            : "Closed"}
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <View>
+                      <View style={{ width: "100%", flexDirection: "row" }}>
+                        <Text
+                          style={{
+                            width: 110,
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          Friday
+                        </Text>
+                        <Text
+                          style={{
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          {selectedQueue.friday.active
+                            ? selectedQueue.friday.open +
+                              " - " +
+                              selectedQueue.friday.close
+                            : "Closed"}
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <View>
+                      <View style={{ width: "100%", flexDirection: "row" }}>
+                        <Text
+                          style={{
+                            width: 110,
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          Saturday
+                        </Text>
+                        <Text
+                          style={{
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          {selectedQueue.saturday.active
+                            ? selectedQueue.saturday.open +
+                              " - " +
+                              selectedQueue.saturday.close
+                            : "Closed"}
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <View>
+                      <View style={{ width: "100%", flexDirection: "row" }}>
+                        <Text
+                          style={{
+                            width: 110,
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          Sunday
+                        </Text>
+                        <Text
+                          style={{
+                            fontWeight: "300",
+                            fontSize: 20,
+                            marginTop: 5,
+                            marginBottom: 5,
+                          }}
+                        >
+                          {selectedQueue.sunday.active
+                            ? selectedQueue.sunday.open +
+                              " - " +
+                              selectedQueue.sunday.close
+                            : "Closed"}
+                        </Text>
+                      </View>
+                    </View>
                   </View>
                 </View>
                 <View style={styles.metaSection}>
@@ -527,6 +780,7 @@ const styles = StyleSheet.create({
     fontWeight: "300",
     textAlign: "center",
     flex: 1,
+    flexWrap: "wrap",
   },
   titleTextSub: {
     fontSize: 10,
