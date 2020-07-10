@@ -6,6 +6,7 @@ import {
   Image,
   TouchableWithoutFeedback,
   Keyboard,
+  StatusBar,
 } from "react-native";
 import Axios from "axios";
 
@@ -183,6 +184,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.loggedInContainer}>
+        <StatusBar barStyle="dark-content" />
         <QueueList />
       </View>
     );

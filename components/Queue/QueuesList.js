@@ -152,7 +152,7 @@ class QueuesList extends Component {
             city: queueData.city,
             state: queueData.state,
             maxCount: queueData.maxCount
-              ? queueData.maxCount["$numberDouble"]
+              ? queueData.maxCount["$numberLong"]
               : null,
             mask: queueData.mask,
             sani: queueData.sani,
@@ -431,7 +431,9 @@ class QueuesList extends Component {
                     }}
                   >
                     <View>
-                      <View style={{ width: "100%", flexDirection: "row" }}>
+                      <View
+                        style={{ width: "100%", flex: 1, flexDirection: "row" }}
+                      >
                         <Text
                           style={{
                             width: 110,
@@ -449,6 +451,7 @@ class QueuesList extends Component {
                             fontSize: 20,
                             marginTop: 5,
                             marginBottom: 5,
+                            textAlign: "center",
                           }}
                         >
                           {selectedQueue.monday.active
