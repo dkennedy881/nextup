@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-function Queue({ queue, selectQueue }) {
+function Queue({ queue, selectQueue, index, list }) {
   const getOpen = () => {
     switch (new Date().getDay()) {
       case 1:
@@ -108,6 +108,11 @@ function Queue({ queue, selectQueue }) {
         selectQueue(queue.id);
       }}
     >
+      <Text>
+        {!list[index].active && (index - 1 === -1 || list[index - 1].active)
+          ? "Closed"
+          : null}
+      </Text>
       <View
         style={
           queue.active === true

@@ -40,18 +40,21 @@ class QueuesList extends Component {
     } catch (e) {
       alert(e);
     }
-    let filteredQueues = queues.reduce((acc, cur) => {
-      if (cur.state === location.state && cur.city === location.city) {
-        acc.push(cur);
-      }
-      if (
-        (cur.city === "" || cur.city === null) &&
-        location.city === "City Not Specified"
-      ) {
-        acc.push(cur);
-      }
-      return acc;
-    }, []);
+    let filteredQueues = queues.reduce(
+      (acc, cur) => {
+        if (cur.state === location.state && cur.city === location.city) {
+          cur.active ? acc.active.push(cur) : acc.inactive.push(cur);
+        }
+        if (
+          (cur.city === "" || cur.city === null) &&
+          location.city === "City Not Specified"
+        ) {
+          cur.active ? cur.active.push(cur) : cur.inactive.push(cur);
+        }
+        return acc;
+      },
+      { active: [], inactive: [] }
+    );
     this.setState({
       filteredQueues,
       selectedLocationObj: `${location.city}, ${location.state}`,
@@ -79,6 +82,7 @@ class QueuesList extends Component {
       selectedLocationObjReal: false,
     });
   };
+
   unSelectQueue = () => {
     this.setState({ selectedQueue: false });
     this.onRefresh();
@@ -115,7 +119,7 @@ class QueuesList extends Component {
       this.setState((state) => ({
         ...state,
         queues,
-        filteredQueues: queues,
+        filteredQueues: false,
         locationObjs,
         isSet: !state.isSet,
         isRefreshing: false,
@@ -262,13 +266,18 @@ class QueuesList extends Component {
                 />
               ) : (
                 <FlatList
-                  data={filteredQueues}
-                  renderItem={({ item }) => (
+                  data={[...filteredQueues.active, ...filteredQueues.inactive]}
+                  renderItem={({ item, index }) => (
                     <Queue
                       selectQueue={selectQueue}
                       unSelectQueue={unSelectQueue}
                       key={item.id}
                       queue={item}
+                      index={index}
+                      list={[
+                        ...filteredQueues.active,
+                        ...filteredQueues.inactive,
+                      ]}
                     />
                   )}
                   keyExtractor={(item) => String(item.id)}
