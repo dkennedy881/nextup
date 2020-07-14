@@ -55,7 +55,7 @@ class QueuesList extends Component {
       },
       { active: [], inactive: [] }
     );
-    this.setState({
+    await this.setState({
       filteredQueues,
       selectedLocationObj: `${location.city}, ${location.state}`,
       selectedLocationObjReal: JSON.parse(JSON.stringify(location)),
@@ -81,6 +81,7 @@ class QueuesList extends Component {
       selectedLocationObj: false,
       selectedLocationObjReal: false,
     });
+    // this.onRefresh();
   };
 
   unSelectQueue = () => {
@@ -236,9 +237,10 @@ class QueuesList extends Component {
         ></HeaderContainer>
 
         <SafeAreaView
+          // contentInsetAdjustmentBehavior="automatic"
           style={{
             flex: 1,
-            display: "flex",
+            // display: "flex",
             backgroundColor: `${selectedQueue ? "#9191" : "#f5f5f5"}`,
           }}
         >
@@ -247,43 +249,52 @@ class QueuesList extends Component {
             refreshControl={
               <RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />
             }
+            // bounces={false}
           >
-            <View>
-              {selectedLocationObj === false ? (
-                <FlatList
-                  data={locationObjs}
-                  renderItem={({ item }) => (
-                    <FilterItem
-                      selectQueue={selectQueue}
-                      unSelectQueue={unSelectLocation}
-                      key={`${item.city}-${item.state}`}
-                      name={`${item.city}, ${item.state}`}
-                      obj={{ city: item.city, state: item.state }}
-                      setHandler={selectLocation}
-                    />
-                  )}
-                  keyExtractor={(item) => String(`${item.city}-${item.state}`)}
-                />
+            {selectedLocationObj === false ? (
+              // <FlatList
+              //   data={locationObjs}
+              //   renderItem={({ item }) => (
+              //     <FilterItem
+              //       selectQueue={selectQueue}
+              //       unSelectQueue={unSelectLocation}
+              //       key={`${item.city}-${item.state}`}
+              //       name={`${item.city}, ${item.state}`}
+              //       obj={{ city: item.city, state: item.state }}
+              //       setHandler={selectLocation}
+              //     />
+              //   )}
+              //   keyExtractor={(item) => String(`${item.city}-${item.state}`)}
+              // />
+              typeof locationObjs === "object" ? (
+                locationObjs.map((item, index) => (
+                  <FilterItem
+                    selectQueue={selectQueue}
+                    unSelectQueue={unSelectLocation}
+                    key={`${item.city}-${item.state}`}
+                    name={`${item.city}, ${item.state}`}
+                    obj={{ city: item.city, state: item.state }}
+                    setHandler={selectLocation}
+                  />
+                ))
               ) : (
-                <FlatList
-                  data={[...filteredQueues.active, ...filteredQueues.inactive]}
-                  renderItem={({ item, index }) => (
-                    <Queue
-                      selectQueue={selectQueue}
-                      unSelectQueue={unSelectQueue}
-                      key={item.id}
-                      queue={item}
-                      index={index}
-                      list={[
-                        ...filteredQueues.active,
-                        ...filteredQueues.inactive,
-                      ]}
-                    />
-                  )}
-                  keyExtractor={(item) => String(item.id)}
+                <></>
+              )
+            ) : (
+              [
+                ...filteredQueues.active,
+                ...filteredQueues.inactive,
+              ].map((item, index) => (
+                <Queue
+                  selectQueue={selectQueue}
+                  unSelectQueue={unSelectQueue}
+                  key={item.id}
+                  queue={item}
+                  index={index}
+                  list={[...filteredQueues.active, ...filteredQueues.inactive]}
                 />
-              )}
-            </View>
+              ))
+            )}
           </ScrollView>
           {selectedQueue ? (
             <View
@@ -373,6 +384,13 @@ class QueuesList extends Component {
                 <View style={styles.metaSectionNoBg}>
                   <Text style={styles.metaSectionTitleNoBg}>What to Know</Text>
                 </View>
+                {!selectedQueue.active ? (
+                  <View style={styles.metaSectionNoBg}>
+                    <Text style={styles.metaSectionTitleNoBgSM}>
+                      Currently Unavailable
+                    </Text>
+                  </View>
+                ) : null}
                 <View style={styles.metaSection}>
                   <Text style={styles.metaSectionTitle}>Masks Required</Text>
                   <View
@@ -775,7 +793,7 @@ const styles = StyleSheet.create({
     // overflow: 'scroll',
     position: "relative",
     top: 1,
-    flex: 1,
+    flexGrow: 1,
   },
   container: {
     flex: 1,
@@ -955,6 +973,13 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     fontSize: 25,
+    textAlign: "center",
+  },
+  metaSectionTitleNoBgSM: {
+    fontWeight: "300",
+    marginTop: -15,
+    marginBottom: 5,
+    fontSize: 15,
     textAlign: "center",
   },
   metaSectionData: {

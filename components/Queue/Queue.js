@@ -102,106 +102,110 @@ function Queue({ queue, selectQueue, index, list }) {
     }
   };
   return (
-    <TouchableOpacity
-      onPress={() => {
-        alert(queue.active);
-        selectQueue(queue.id);
-      }}
-    >
-      <Text>
-        {!list[index].active && (index - 1 === -1 || list[index - 1].active)
-          ? "Closed"
-          : null}
-      </Text>
-      <View
-        style={
-          queue.active === true
-            ? styles.QueueContainer
-            : styles.QueueContainerInactive
-        }
-      >
-        <View style={styles.metaDataContainer}>
-          <Text
-            style={
-              queue.active === true
-                ? styles.titleText
-                : styles.titleTextInactive
-            }
-          >
-            {queue.title}
+    <>
+      {!list[index].active && (index - 1 === -1 || list[index - 1].active) ? (
+        <View style={{ marginTop: 5, paddingLeft: 20 }}>
+          <Text style={{ color: "#555", textAlign: "center" }}>
+            Currently Unavailable
           </Text>
-          {queue.message ? (
-            <Text
-              style={
-                queue.active === true
-                  ? styles.messageText
-                  : styles.messageTextInactive
-              }
-            >
-              {queue.message}
-            </Text>
-          ) : null}
-          <View style={styles.addressContainer}>
-            <Text
-              style={
-                queue.active === true
-                  ? styles.addressText
-                  : styles.addressTextInactive
-              }
-            >
-              {queue.address},{" "}
-            </Text>
-            <Text
-              style={
-                queue.active === true
-                  ? styles.addressText
-                  : styles.addressTextInactive
-              }
-            >
-              {queue.zipCode}
-            </Text>
-          </View>
-          <View style={styles.hoursContainer}>
-            <Text
-              style={
-                queue.active === true
-                  ? styles.hoursText
-                  : styles.hoursTextInactive
-              }
-            >
-              {getOpen()}
-            </Text>
-            <Text
-              style={
-                queue.active === true
-                  ? styles.hoursText
-                  : styles.hoursTextInactive
-              }
-            >
-              {getClose()}
-            </Text>
-          </View>
         </View>
+      ) : null}
+
+      <TouchableOpacity
+        onPress={() => {
+          selectQueue(queue.id);
+        }}
+      >
         <View
           style={
             queue.active === true
-              ? styles.queueCountContainer
-              : styles.queueCountContainerInactive
+              ? styles.QueueContainer
+              : styles.QueueContainerInactive
           }
         >
-          <Text style={styles.queueCountText}>{queue.count}</Text>
-          <Text
+          <View style={styles.metaDataContainer}>
+            <Text
+              style={
+                queue.active === true
+                  ? styles.titleText
+                  : styles.titleTextInactive
+              }
+            >
+              {queue.title}
+            </Text>
+            {queue.message ? (
+              <Text
+                style={
+                  queue.active === true
+                    ? styles.messageText
+                    : styles.messageTextInactive
+                }
+              >
+                {queue.message}
+              </Text>
+            ) : null}
+            <View style={styles.addressContainer}>
+              <Text
+                style={
+                  queue.active === true
+                    ? styles.addressText
+                    : styles.addressTextInactive
+                }
+              >
+                {queue.address},{" "}
+              </Text>
+              <Text
+                style={
+                  queue.active === true
+                    ? styles.addressText
+                    : styles.addressTextInactive
+                }
+              >
+                {queue.zipCode}
+              </Text>
+            </View>
+            <View style={styles.hoursContainer}>
+              <Text
+                style={
+                  queue.active === true
+                    ? styles.hoursText
+                    : styles.hoursTextInactive
+                }
+              >
+                {getOpen()}
+              </Text>
+              <Text
+                style={
+                  queue.active === true
+                    ? styles.hoursText
+                    : styles.hoursTextInactive
+                }
+              >
+                {getClose()}
+              </Text>
+            </View>
+          </View>
+          <View
             style={
               queue.active === true
-                ? styles.queueCountTextSub
-                : styles.queueCountTextSubInactive
+                ? styles.queueCountContainer
+                : styles.queueCountContainerInactive
             }
           >
-            {"in line"}
-          </Text>
+            <Text style={styles.queueCountText}>{queue.count}</Text>
+            <Text
+              style={
+                queue.active === true
+                  ? styles.queueCountTextSub
+                  : styles.queueCountTextSubInactive
+              }
+            >
+              {"in line"}
+            </Text>
+          </View>
         </View>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </>
   );
 }
 
