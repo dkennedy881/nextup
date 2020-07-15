@@ -39,6 +39,7 @@ function HeaderContainer({
             position: "relative",
             top: 30,
             overflow: "visible",
+            width: 100,
           }}
           onPress={() => {
             unSelectLocation();
