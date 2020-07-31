@@ -51,7 +51,53 @@ function Queue({ queue, selectQueue, index, list }) {
         if (queue.sunday.active) {
           return queue.sunday.open + " - ";
         } else {
-          return "";
+          return "Closed";
+        }
+    }
+  };
+  const getOpen2 = (queue) => {
+    switch (new Date().getDay()) {
+      case 1:
+        if (queue.monday.active) {
+          return queue.monday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      case 2:
+        if (queue.tuesday.active) {
+          return queue.tuesday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      case 3:
+        if (queue.wednesday.active) {
+          return queue.wednesday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      case 4:
+        if (queue.thursday.active) {
+          return queue.thursday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      case 5:
+        if (queue.friday.active) {
+          return queue.friday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      case 6:
+        if (queue.saturday.active) {
+          return queue.saturday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      default:
+        if (queue.sunday.active) {
+          return queue.sunday.open + " - ";
+        } else {
+          return "Closed";
         }
     }
   };
@@ -103,7 +149,9 @@ function Queue({ queue, selectQueue, index, list }) {
   };
   return (
     <>
-      {!list[index].active && (index - 1 === -1 || list[index - 1].active) ? (
+      {(!list[index].active || getOpen2(list[index]) === "Closed") &&
+      (index - 1 === -1 ||
+        (list[index - 1].active && getOpen2(list[index - 1]) !== "Closed")) ? (
         <View style={{ marginTop: 5, paddingLeft: 20 }}>
           <Text style={{ color: "#555", textAlign: "center" }}>
             Currently Unavailable
@@ -118,7 +166,7 @@ function Queue({ queue, selectQueue, index, list }) {
       >
         <View
           style={
-            queue.active === true
+            queue.active === true && getOpen() !== "Closed"
               ? styles.QueueContainer
               : styles.QueueContainerInactive
           }
@@ -126,7 +174,7 @@ function Queue({ queue, selectQueue, index, list }) {
           <View style={styles.metaDataContainer}>
             <Text
               style={
-                queue.active === true
+                queue.active === true && getOpen() !== "Closed"
                   ? styles.titleText
                   : styles.titleTextInactive
               }
@@ -136,7 +184,7 @@ function Queue({ queue, selectQueue, index, list }) {
             {queue.message ? (
               <Text
                 style={
-                  queue.active === true
+                  queue.active === true && getOpen() !== "Closed"
                     ? styles.messageText
                     : styles.messageTextInactive
                 }
@@ -147,7 +195,7 @@ function Queue({ queue, selectQueue, index, list }) {
             <View style={styles.addressContainer}>
               <Text
                 style={
-                  queue.active === true
+                  queue.active === true && getOpen() !== "Closed"
                     ? styles.addressText
                     : styles.addressTextInactive
                 }
@@ -156,7 +204,7 @@ function Queue({ queue, selectQueue, index, list }) {
               </Text>
               <Text
                 style={
-                  queue.active === true
+                  queue.active === true && getOpen() !== "Closed"
                     ? styles.addressText
                     : styles.addressTextInactive
                 }
@@ -167,7 +215,7 @@ function Queue({ queue, selectQueue, index, list }) {
             <View style={styles.hoursContainer}>
               <Text
                 style={
-                  queue.active === true
+                  queue.active === true && getOpen() !== "Closed"
                     ? styles.hoursText
                     : styles.hoursTextInactive
                 }
@@ -176,7 +224,7 @@ function Queue({ queue, selectQueue, index, list }) {
               </Text>
               <Text
                 style={
-                  queue.active === true
+                  queue.active === true && getOpen() !== "Closed"
                     ? styles.hoursText
                     : styles.hoursTextInactive
                 }
@@ -187,7 +235,7 @@ function Queue({ queue, selectQueue, index, list }) {
           </View>
           <View
             style={
-              queue.active === true
+              queue.active === true && getOpen() !== "Closed"
                 ? styles.queueCountContainer
                 : styles.queueCountContainerInactive
             }
@@ -195,7 +243,7 @@ function Queue({ queue, selectQueue, index, list }) {
             <Text style={styles.queueCountText}>{queue.count}</Text>
             <Text
               style={
-                queue.active === true
+                queue.active === true && getOpen() !== "Closed"
                   ? styles.queueCountTextSub
                   : styles.queueCountTextSubInactive
               }

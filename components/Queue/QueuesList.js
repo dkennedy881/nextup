@@ -43,14 +43,16 @@ class QueuesList extends Component {
     let filteredQueues = queues.reduce(
       (acc, cur) => {
         if (cur.state === location.state && cur.city === location.city) {
-          cur.active ? acc.active.push(cur) : acc.inactive.push(cur);
+          cur.active && this.getOpen(cur) !== "Closed"
+            ? acc.active.push(cur)
+            : acc.inactive.push(cur);
         }
-        if (
-          (cur.city === "" || cur.city === null) &&
-          location.city === "City Not Specified"
-        ) {
-          cur.active ? cur.active.push(cur) : cur.inactive.push(cur);
-        }
+        // if (
+        //   (cur.city === "" || cur.city === null) &&
+        //   location.city === "City Not Specified"
+        // ) {
+        //   cur.active ? cur.active.push(cur) : cur.inactive.push(cur);
+        // }
         return acc;
       },
       { active: [], inactive: [] }
@@ -61,6 +63,53 @@ class QueuesList extends Component {
       selectedLocationObjReal: JSON.parse(JSON.stringify(location)),
       isRefreshing: false,
     });
+  };
+
+  getOpen = (queue) => {
+    switch (new Date().getDay()) {
+      case 1:
+        if (queue.monday.active) {
+          return queue.monday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      case 2:
+        if (queue.tuesday.active) {
+          return queue.tuesday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      case 3:
+        if (queue.wednesday.active) {
+          return queue.wednesday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      case 4:
+        if (queue.thursday.active) {
+          return queue.thursday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      case 5:
+        if (queue.friday.active) {
+          return queue.friday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      case 6:
+        if (queue.saturday.active) {
+          return queue.saturday.open + " - ";
+        } else {
+          return "Closed";
+        }
+      default:
+        if (queue.sunday.active) {
+          return queue.sunday.open + " - ";
+        } else {
+          return "Closed";
+        }
+    }
   };
 
   selectQueue = async (id) => {
