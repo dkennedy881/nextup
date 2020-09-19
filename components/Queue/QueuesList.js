@@ -33,6 +33,46 @@ class QueuesList extends Component {
     };
   }
 
+  setCounterColor = () => {
+    const { estMinutes, estHours } = this.state.selectedQueue;
+    if (estHours > 0) {
+      return styles.metaSectionCenterContentRed;
+    }
+    if (estMinutes > 29) {
+      return styles.metaSectionCenterContentRed;
+    }
+    if (estMinutes > 15) {
+      return styles.metaSectionCenterContentYellow;
+    } else {
+      return styles.metaSectionCenterContentGreen;
+    }
+  };
+
+  setCountText = () => {
+    const { estMinutes, estHours } = this.state.selectedQueue;
+    if (estHours > 0 || estMinutes < 16) {
+      return styles.countText;
+    } else {
+      return {
+        fontSize: 60,
+        textAlign: "center",
+        color: "white",
+      };
+    }
+  };
+  setCountTextSub = () => {
+    const { estMinutes, estHours } = this.state.selectedQueue;
+    if (estHours > 0 || estMinutes < 16) {
+      return styles.countTextSub;
+    } else {
+      return {
+        fontSize: 15,
+        textAlign: "center",
+        color: "black",
+      };
+    }
+  };
+
   selectLocation = async (location) => {
     let queues = [];
     try {
@@ -187,10 +227,6 @@ class QueuesList extends Component {
           let newJSON = {
             title: queueData.title,
             message: queueData.message,
-            // hours: {
-            //   open: queueData.open,
-            //   close: queueData.close,
-            // },
             monday: queueData.monday,
             tuesday: queueData.tuesday,
             wednesday: queueData.wednesday,
@@ -211,6 +247,11 @@ class QueuesList extends Component {
             mask: queueData.mask,
             sani: queueData.sani,
             businessNumber: queueData.businessNumber,
+            stationCount: queueData.stationCount
+              ? queueData.stationCount["$numberLong"]
+              : null,
+            estHours: queueData.estHours["$numberLong"],
+            estMinutes: queueData.estMinutes["$numberLong"],
           };
           queues.push(newJSON);
           return queues;
@@ -275,6 +316,9 @@ class QueuesList extends Component {
       unSelectQueue,
       unSelectLocation,
       selectLocation,
+      setCounterColor,
+      setCountText,
+      setCountTextSub,
     } = this;
     return (
       <React.Fragment>
@@ -425,9 +469,9 @@ class QueuesList extends Component {
 
               <ScrollView>
                 <View style={styles.metaSectionCenter}>
-                  <View style={styles.metaSectionCenterContent}>
-                    <Text style={styles.countText}>{selectedQueue.count}</Text>
-                    <Text style={styles.countTextSub}>{"in line"}</Text>
+                  <View style={setCounterColor()}>
+                    <Text style={setCountText()}>{selectedQueue.count}</Text>
+                    <Text style={setCountTextSub()}>{"in line"}</Text>
                   </View>
                 </View>
                 <View style={styles.metaSectionNoBg}>
@@ -484,7 +528,49 @@ class QueuesList extends Component {
                   </View>
                 </View>
                 <View style={styles.metaSection}>
-                  <Text style={styles.metaSectionTitle}>Business Message</Text>
+                  <Text style={styles.metaSectionTitle}>Station Count</Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Text style={styles.maxCount}>
+                      {selectedQueue.stationCount
+                        ? selectedQueue.stationCount
+                        : "Not Specified"}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>
+                    Estimated Wait Time
+                  </Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    {selectedQueue.estHours < 1 ? (
+                      <Text style={styles.maxCount}>
+                        {`${selectedQueue.estMinutes} Minute${
+                          selectedQueue.estMinutes > 1 ? "s" : ""
+                        }`}
+                      </Text>
+                    ) : (
+                      <Text style={styles.maxCount}>
+                        {`${selectedQueue.estHours} Hour${
+                          selectedQueue.estHours > 1 ? "s" : ""
+                        } and ${selectedQueue.estMinutes} Minute${
+                          selectedQueue.estMinutes > 1 ? "s" : ""
+                        }`}
+                      </Text>
+                    )}
+                  </View>
+                </View>
+                <View style={styles.metaSection}>
+                  <Text style={styles.metaSectionTitle}>Location Message</Text>
                   <View
                     style={{
                       display: "flex",
@@ -907,6 +993,66 @@ const styles = StyleSheet.create({
   metaSectionCenterContent: {
     padding: 15,
     backgroundColor: "#8ecfd4",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 0.1,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 0.84,
+
+    elevation: 1,
+    borderRadius: 9,
+    // width: "50%",
+    minWidth: 110,
+    height: 110,
+    // marginLeft: 50,
+    // marginRight: 50,
+    marginBottom: -10,
+  },
+  metaSectionCenterContentRed: {
+    padding: 15,
+    backgroundColor: "red",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 0.1,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 0.84,
+
+    elevation: 1,
+    borderRadius: 9,
+    // width: "50%",
+    minWidth: 110,
+    height: 110,
+    // marginLeft: 50,
+    // marginRight: 50,
+    marginBottom: -10,
+  },
+  metaSectionCenterContentGreen: {
+    padding: 15,
+    backgroundColor: "#57ab53",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 0.1,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 0.84,
+
+    elevation: 1,
+    borderRadius: 9,
+    // width: "50%",
+    minWidth: 110,
+    height: 110,
+    // marginLeft: 50,
+    // marginRight: 50,
+    marginBottom: -10,
+  },
+  metaSectionCenterContentYellow: {
+    padding: 15,
+    backgroundColor: "#ffdf6d",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

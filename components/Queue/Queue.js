@@ -9,6 +9,52 @@ import {
 } from "react-native";
 
 function Queue({ queue, selectQueue, index, list }) {
+  const setCounterColor = () => {
+    const { estMinutes, estHours } = queue;
+    if (estHours > 0) {
+      return styles.queueCountContainerRed;
+    }
+    if (estMinutes > 29) {
+      return styles.queueCountContainerRed;
+    }
+    if (estMinutes > 15) {
+      return styles.queueCountContainerYellow;
+    } else {
+      return styles.queueCountContainerGreen;
+    }
+  };
+
+  const setQueueCountText = () => {
+    const { estMinutes, estHours } = queue;
+    if (estHours > 0 || estMinutes < 16) {
+      return styles.queueCountText;
+    } else {
+      return {
+        fontSize: 30,
+        padding: 10,
+        paddingBottom: 0,
+        textAlign: "center",
+        color: "white",
+        fontWeight: "900",
+      };
+    }
+  };
+
+  const setQueueCountTextSub = () => {
+    const { estMinutes, estHours } = queue;
+    if (estHours > 0 || estMinutes < 16) {
+      return styles.queueCountTextSub;
+    } else {
+      return {
+        fontSize: 12,
+        textAlign: "center",
+        color: "black",
+        // color: "#fefefe",
+        fontWeight: "500",
+      };
+    }
+  };
+
   const getOpen = () => {
     switch (new Date().getDay()) {
       case 1:
@@ -236,15 +282,30 @@ function Queue({ queue, selectQueue, index, list }) {
           <View
             style={
               queue.active === true && getOpen() !== "Closed"
-                ? styles.queueCountContainer
+                ? setCounterColor()
                 : styles.queueCountContainerInactive
             }
           >
-            <Text style={styles.queueCountText}>{queue.count}</Text>
             <Text
               style={
                 queue.active === true && getOpen() !== "Closed"
-                  ? styles.queueCountTextSub
+                  ? setQueueCountText()
+                  : {
+                      fontSize: 30,
+                      padding: 10,
+                      paddingBottom: 0,
+                      textAlign: "center",
+                      color: "white",
+                      fontWeight: "900",
+                    }
+              }
+            >
+              {queue.count}
+            </Text>
+            <Text
+              style={
+                queue.active === true && getOpen() !== "Closed"
+                  ? setQueueCountTextSub()
                   : styles.queueCountTextSubInactive
               }
             >
@@ -373,6 +434,36 @@ const styles = StyleSheet.create({
     minWidth: 70,
     minHeight: 70,
     backgroundColor: "#8ecfd4",
+  },
+  queueCountContainerGreen: {
+    // borderStyle: "solid",
+    // borderColor: "red",
+    color: "white",
+    // borderWidth: 0.5,
+    borderRadius: 5,
+    minWidth: 70,
+    minHeight: 70,
+    backgroundColor: "#57ab53",
+  },
+  queueCountContainerYellow: {
+    // borderStyle: "solid",
+    // borderColor: "red",
+    color: "white",
+    // borderWidth: 0.5,
+    borderRadius: 5,
+    minWidth: 70,
+    minHeight: 70,
+    backgroundColor: "#ffdf6d",
+  },
+  queueCountContainerRed: {
+    // borderStyle: "solid",
+    // borderColor: "red",
+    color: "white",
+    // borderWidth: 0.5,
+    borderRadius: 5,
+    minWidth: 70,
+    minHeight: 70,
+    backgroundColor: "red",
   },
   queueCountContainerInactive: {
     // borderStyle: "solid",

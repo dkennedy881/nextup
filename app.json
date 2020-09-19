@@ -2,8 +2,12 @@
   "expo": {
     "name": "nextup",
     "slug": "nextup",
-    "platforms": ["ios", "android", "web"],
-    "version": "1.2.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -14,10 +18,12 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "nextupqueuemember"
+      "bundleIdentifier": "nextupcityguidevoter"
     },
     "description": ""
   }
