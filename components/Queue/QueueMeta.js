@@ -1,22 +1,13 @@
 import React, { useState, useEffect, Component } from "react";
 
 import {
-  SafeAreaView,
   StyleSheet,
   ScrollView,
   View,
   Text,
-  StatusBar,
-  Image,
-  FlatList,
-  ListItem,
-  ImageBackground,
   TouchableOpacity,
   Keyboard,
-  CheckBox,
   TextInput,
-  DatePickerIOS,
-  TimePickerIOS,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
 } from "react-native";

@@ -2,104 +2,210 @@ import React, { useState } from "react";
 import { Icon } from "react-native-elements";
 
 import { View, Text, Image, TouchableOpacity } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
 
 function HeaderContainer({
-  toggleSettings,
   selectedLocationObj,
   unSelectLocation,
   selectedQueue,
 }) {
-  const [showSettings, setShowSettings] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
-  return selectedLocationObj ? (
-    <View
-      style={
-        selectedQueue ? styles.HeaderContainerHide : styles.HeaderContainer
-      }
-    >
-      <View style={styles.HeaderItems}>
-        <TouchableOpacity
-          style={styles.HeaderItemSM}
-          onPress={() => {
-            unSelectLocation();
-          }}
-        ></TouchableOpacity>
-        <View style={styles.TitleContainer}>
-          <Text style={{ fontSize: 10 }}>{selectedLocationObj}</Text>
-          <Image
-            style={{ width: 120, height: 40 }}
-            source={require("../../images/next-up.png")}
-          />
-        </View>
-        <TouchableOpacity style={styles.HeaderItemSM} />
-      </View>
-      <View>
-        <TouchableOpacity
+  return (
+    <>
+      {/* {showInfo ? (
+        // <View
+        //   style={{
+        //     zIndex: 1,
+        //     height: "100%",
+        //     width: "100%",
+        //     position: "absolute",
+        //     justifyContent: "center",
+        //   }}
+        //   onPress={() => alert()}
+        // >
+        <View
           style={{
-            position: "relative",
-            top: 30,
-            overflow: "visible",
-            width: 100,
-          }}
-          onPress={() => {
-            unSelectLocation();
+            zIndex: 1,
+            height: 500,
+            flexDirection: "row",
+            justifyContent: "center",
+            position: "absolute",
+            backgroundColor: "blue",
+            top: 150,
+            left: 45,
           }}
         >
           <View
             style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
+              width: "80%",
+              backgroundColor: "red",
+              zIndex: 1,
+              height: 500,
             }}
           >
-            <Icon
-              name={"chevron-left"}
-              type="font-awesome"
-              color="#6da8bd"
-              size={23}
-              style={{ marginLeft: 10 }}
-            />
-            <Text
-              style={{
-                fontSize: 10,
-                marginLeft: 10,
-                fontWeight: "900",
-                color: "#6da8bd",
-              }}
-            >
-              Back
-            </Text>
+            <LinearGradient colors={["red", "yellow", "green"]}>
+              <Text>Vertical Gradient</Text>
+            </LinearGradient>
           </View>
-        </TouchableOpacity>
-      </View>
-    </View>
-  ) : (
-    <View style={styles.HeaderContainer}>
-      <View style={styles.HeaderItems}>
-        <TouchableOpacity
-          style={styles.HeaderItemSM}
-          onPress={() => {
-            unSelectLocation();
-          }}
-        ></TouchableOpacity>
-        <View style={styles.TitleContainer}>
-          {/* <Text style={styles.TitleText}>Next Up</Text> */}
-          <Text style={{ fontSize: 10 }}> </Text>
-          <Image
-            style={{ width: 120, height: 40 }}
-            source={require("../../images/next-up_text-color.jpeg")}
-          />
         </View>
-        <TouchableOpacity style={styles.HeaderItemSM} />
-      </View>
-    </View>
+      ) : (
+        // </View>
+        <></>
+      )} */}
+      {selectedLocationObj ? (
+        <View
+          style={
+            selectedQueue ? styles.HeaderContainerHide : styles.HeaderContainer
+          }
+        >
+          <View style={{ display: "flex", flexDirection: "row" }}>
+            <View>
+              <TouchableOpacity
+                style={{
+                  position: "relative",
+                  overflow: "visible",
+                  width: 100,
+                  top: -8,
+                  left: 15,
+                }}
+                onPress={() => {
+                  unSelectLocation();
+                }}
+              >
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <Icon
+                    name={"chevron-left"}
+                    type="font-awesome"
+                    color="#6da8bd"
+                    size={23}
+                    style={{ marginLeft: 10 }}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 10,
+                      marginLeft: 10,
+                      fontWeight: "900",
+                      color: "#6da8bd",
+                    }}
+                  >
+                    Back
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.HeaderItems}>
+              <TouchableOpacity
+                style={styles.HeaderItemSM}
+                onPress={() => {
+                  unSelectLocation();
+                }}
+              ></TouchableOpacity>
+              <View style={styles.TitleContainer}>
+                <Text style={{ fontSize: 10 }}>{selectedLocationObj}</Text>
+                <Image
+                  style={{ width: 120, height: 40 }}
+                  source={require("../../images/next-up.png")}
+                />
+              </View>
+              <TouchableOpacity style={styles.HeaderItemSM} />
+            </View>
+            <View>
+              <TouchableOpacity
+                style={{
+                  position: "relative",
+                  overflow: "visible",
+                  width: 100,
+                }}
+                // onPress={() => {
+                // setShowInfo(!showInfo);
+                // alert();
+                // }}
+              >
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    top: -10,
+                  }}
+                >
+                  {/* <Icon
+                    name={"info-circle"}
+                    type="font-awesome"
+                    color="#6da8bd"
+                    size={23}
+                    style={{ marginLeft: 10 }}
+                  /> */}
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      ) : (
+        <View
+          style={
+            selectedQueue ? styles.HeaderContainerHide : styles.HeaderContainer
+          }
+        >
+          <View style={{ display: "flex", flexDirection: "row" }}>
+            <View>
+              <TouchableOpacity
+                style={{
+                  position: "relative",
+                  overflow: "visible",
+                  width: 100,
+                  top: -10,
+                }}
+                onPress={() => {
+                  unSelectLocation();
+                }}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.HeaderItems}>
+              <TouchableOpacity
+                style={styles.HeaderItemSM}
+                onPress={() => {
+                  unSelectLocation();
+                }}
+              ></TouchableOpacity>
+              <View style={styles.TitleContainer}>
+                <View style={{ minHeight: 12 }}></View>
+                <Image
+                  style={{ width: 120, height: 40 }}
+                  source={require("../../images/next-up.png")}
+                />
+              </View>
+              <TouchableOpacity style={styles.HeaderItemSM} />
+            </View>
+            <View>
+              <TouchableOpacity
+                style={{
+                  position: "relative",
+                  overflow: "visible",
+                  width: 100,
+                }}
+                onPress={() => {
+                  unSelectLocation();
+                }}
+              ></TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      )}
+    </>
   );
 }
 
 const styles = {
   HeaderContainer: {
     height: "11%",
-    flexDirection: "column-reverse",
     backgroundColor: "white",
     borderWidth: 1,
     borderColor: "#eee",
@@ -111,6 +217,7 @@ const styles = {
     },
     shadowRadius: 4,
     shadowOpacity: 5,
+    paddingTop: 68,
   },
   HeaderContainerHide: {
     height: "11%",
@@ -130,6 +237,7 @@ const styles = {
     flexDirection: "row",
     justifyContent: "space-evenly",
     height: "50%",
+    flex: 1,
   },
   HeaderItemsR2: {
     flexDirection: "row",

@@ -54,7 +54,7 @@ class QueuesList extends Component {
       return styles.countText;
     } else {
       return {
-        fontSize: 60,
+        fontSize: 30,
         textAlign: "center",
         color: "white",
       };
@@ -274,6 +274,24 @@ class QueuesList extends Component {
     return false;
   }
 
+  getFormattedTime = () => {
+    const { estMinutes, estHours } = this.state.selectedQueue;
+    const hourString =
+      estHours > 0
+        ? estHours > 1
+          ? `${estHours} hours`
+          : `${estHours} hour`
+        : "";
+    const minuteString =
+      estMinutes > 0
+        ? estMinutes > 1
+          ? `${estMinutes} minutes`
+          : `${estMinutes} minute`
+        : "";
+
+    return `${hourString} ${minuteString}`;
+  };
+
   async componentDidMount() {
     if (!this.state.isSet) {
       try {
@@ -319,6 +337,7 @@ class QueuesList extends Component {
       setCounterColor,
       setCountText,
       setCountTextSub,
+      getFormattedTime,
     } = this;
     return (
       <React.Fragment>
@@ -470,8 +489,28 @@ class QueuesList extends Component {
               <ScrollView>
                 <View style={styles.metaSectionCenter}>
                   <View style={setCounterColor()}>
-                    <Text style={setCountText()}>{selectedQueue.count}</Text>
-                    <Text style={setCountTextSub()}>{"in line"}</Text>
+                    <Text style={setCountText()}>{getFormattedTime()}</Text>
+                  </View>
+                </View>
+                <View style={styles.metaSectionCenterSub}>
+                  <View style={styles.metaLilButtonContainer}>
+                    <Text
+                      style={styles.metaLilButtonContainerText}
+                    >{`${selectedQueue.count} in line`}</Text>
+                  </View>
+                  <View style={styles.metaLilButtonContainer}>
+                    <Text style={styles.metaLilButtonContainerText}>
+                      {selectedQueue.stationCount
+                        ? `${selectedQueue.stationCount} stations`
+                        : "Not Specified"}
+                    </Text>
+                  </View>
+                  <View style={styles.metaLilButtonContainer}>
+                    <Text style={styles.metaLilButtonContainerText}>
+                      {selectedQueue.maxCount
+                        ? `Max Capacity ${selectedQueue.maxCount}`
+                        : "Not Specified"}
+                    </Text>
                   </View>
                 </View>
                 <View style={styles.metaSectionNoBg}>
@@ -512,7 +551,7 @@ class QueuesList extends Component {
                     </Text>
                   </View>
                 </View>
-                <View style={styles.metaSection}>
+                {/* <View style={styles.metaSection}>
                   <Text style={styles.metaSectionTitle}>Max Capacity</Text>
                   <View
                     style={{
@@ -526,8 +565,8 @@ class QueuesList extends Component {
                         : "Not Specified"}
                     </Text>
                   </View>
-                </View>
-                <View style={styles.metaSection}>
+                </View> */}
+                {/* <View style={styles.metaSection}>
                   <Text style={styles.metaSectionTitle}>Station Count</Text>
                   <View
                     style={{
@@ -541,8 +580,8 @@ class QueuesList extends Component {
                         : "Not Specified"}
                     </Text>
                   </View>
-                </View>
-                <View style={styles.metaSection}>
+                </View> */}
+                {/* <View style={styles.metaSection}>
                   <Text style={styles.metaSectionTitle}>
                     Estimated Wait Time
                   </Text>
@@ -568,7 +607,7 @@ class QueuesList extends Component {
                       </Text>
                     )}
                   </View>
-                </View>
+                </View> */}
                 <View style={styles.metaSection}>
                   <Text style={styles.metaSectionTitle}>Location Message</Text>
                   <View
@@ -922,6 +961,22 @@ class QueuesList extends Component {
 export default QueuesList;
 
 const styles = StyleSheet.create({
+  metaLilButtonContainer: {
+    marginLeft: 5,
+    marginRight: 5,
+    borderStyle: "solid",
+    borderWidth: 0.5,
+    padding: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderRadius: 9,
+    backgroundColor: "#8ecfd4",
+    borderColor: "#eee",
+    color: "white",
+  },
+  metaLilButtonContainerText: {
+    color: "white",
+  },
   QueuesListContainer: {
     borderColor: "#eeee",
     borderStyle: "solid",
@@ -990,6 +1045,12 @@ const styles = StyleSheet.create({
     alignContent: "center",
     justifyContent: "center",
   },
+  metaSectionCenterSub: {
+    display: "flex",
+    flexDirection: "row",
+    alignContent: "center",
+    justifyContent: "center",
+  },
   metaSectionCenterContent: {
     padding: 15,
     backgroundColor: "#8ecfd4",
@@ -1025,10 +1086,11 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     // width: "50%",
     minWidth: 110,
-    height: 110,
+    // height: 80,
+    alignSelf: "center",
     // marginLeft: 50,
     // marginRight: 50,
-    marginBottom: -10,
+    // marginBottom: -10,
   },
   metaSectionCenterContentGreen: {
     padding: 15,
@@ -1045,10 +1107,10 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     // width: "50%",
     minWidth: 110,
-    height: 110,
+    alignSelf: "center",
     // marginLeft: 50,
     // marginRight: 50,
-    marginBottom: -10,
+    // marginBottom: -10,
   },
   metaSectionCenterContentYellow: {
     padding: 15,
@@ -1065,10 +1127,9 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     // width: "50%",
     minWidth: 110,
-    height: 110,
+    alignSelf: "center",
     // marginLeft: 50,
     // marginRight: 50,
-    marginBottom: -10,
   },
   countTextContainer: {
     paddingTop: 50,
@@ -1078,7 +1139,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 9,
   },
   countText: {
-    fontSize: 60,
+    fontSize: 30,
     textAlign: "center",
     color: "white",
   },

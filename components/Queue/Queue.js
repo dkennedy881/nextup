@@ -193,6 +193,14 @@ function Queue({ queue, selectQueue, index, list }) {
         }
     }
   };
+
+  const getMinutes = () => {
+    const { estMinutes, estHours } = queue;
+    return estHours > 0
+      ? parseInt(estHours * 60) + parseInt(estMinutes)
+      : estMinutes;
+  };
+
   return (
     <>
       {(!list[index].active || getOpen2(list[index]) === "Closed") &&
@@ -300,7 +308,7 @@ function Queue({ queue, selectQueue, index, list }) {
                     }
               }
             >
-              {queue.count}
+              {getMinutes()}
             </Text>
             <Text
               style={
@@ -309,7 +317,7 @@ function Queue({ queue, selectQueue, index, list }) {
                   : styles.queueCountTextSubInactive
               }
             >
-              {"in line"}
+              {"minutes"}
             </Text>
           </View>
         </View>
