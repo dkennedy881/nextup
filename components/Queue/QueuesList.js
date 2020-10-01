@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, { useState, Component, useRef } from "react";
 import Axios from "axios";
 import { Icon } from "react-native-elements";
 
@@ -30,7 +30,9 @@ class QueuesList extends Component {
       selectedLocationObj: false,
       selectedLocationObjReal: false,
       filteredQueues: false,
+      doShowInfo: false,
     };
+    this.scrollRef = React.createRef();
   }
 
   setCounterColor = () => {
@@ -162,7 +164,11 @@ class QueuesList extends Component {
     const selected = queues.filter((q) => {
       return q.id === id;
     })[0];
-    this.setState({ selectedQueue: selected });
+    this.setState((state) => ({
+      ...state,
+      selectedQueue: selected,
+      doShowInfo: !this.state.doShowInfo,
+    }));
   };
 
   unSelectLocation = async () => {
@@ -170,7 +176,12 @@ class QueuesList extends Component {
       selectedLocationObj: false,
       selectedLocationObjReal: false,
     });
-    // this.onRefresh();
+    this.setState((state) => ({
+      ...state,
+      selectedLocationObj: false,
+      selectedLocationObjReal: false,
+      doShowInfo: !this.state.doShowInfo,
+    }));
   };
 
   unSelectQueue = () => {
@@ -235,7 +246,7 @@ class QueuesList extends Component {
             saturday: queueData.saturday,
             sunday: queueData.sunday,
             active: queueData.active,
-            count: queueData.count["$numberLong"],
+            count: queueData.count ? queueData.count["$numberLong"] : null,
             id: queueData.id["$numberLong"],
             address: queueData.address,
             zipCode: queueData.zipCode,
@@ -327,6 +338,7 @@ class QueuesList extends Component {
       locationObjs,
       filteredQueues,
       selectedLocationObj,
+      doShowInfo,
     } = this.state;
     let {
       onRefresh,
@@ -346,6 +358,7 @@ class QueuesList extends Component {
           selectedLocationObj={selectedLocationObj}
           queueMember={true}
           selectedQueue={selectedQueue}
+          doShowInfo={doShowInfo}
         ></HeaderContainer>
 
         <SafeAreaView
@@ -357,6 +370,7 @@ class QueuesList extends Component {
           }}
         >
           <ScrollView
+            ref={(ref) => (this.scrollRef = ref)}
             contentContainerStyle={styles.QueuesListContainer}
             refreshControl={
               <RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />
@@ -493,25 +507,37 @@ class QueuesList extends Component {
                   </View>
                 </View>
                 <View style={styles.metaSectionCenterSub}>
-                  <View style={styles.metaLilButtonContainer}>
-                    <Text
-                      style={styles.metaLilButtonContainerText}
-                    >{`${selectedQueue.count} in line`}</Text>
-                  </View>
-                  <View style={styles.metaLilButtonContainer}>
-                    <Text style={styles.metaLilButtonContainerText}>
-                      {selectedQueue.stationCount
-                        ? `${selectedQueue.stationCount} stations`
-                        : "Not Specified"}
-                    </Text>
-                  </View>
-                  <View style={styles.metaLilButtonContainer}>
-                    <Text style={styles.metaLilButtonContainerText}>
-                      {selectedQueue.maxCount
-                        ? `Max Capacity ${selectedQueue.maxCount}`
-                        : "Not Specified"}
-                    </Text>
-                  </View>
+                  {selectedQueue.count ? (
+                    <View style={styles.metaLilButtonContainer}>
+                      <Text
+                        style={styles.metaLilButtonContainerText}
+                      >{`${selectedQueue.count} in line`}</Text>
+                    </View>
+                  ) : (
+                    <></>
+                  )}
+                  {selectedQueue.stationCount ? (
+                    <View style={styles.metaLilButtonContainer}>
+                      <Text style={styles.metaLilButtonContainerText}>
+                        {selectedQueue.stationCount
+                          ? `${selectedQueue.stationCount} stations`
+                          : "Station # Not Specified"}
+                      </Text>
+                    </View>
+                  ) : (
+                    <></>
+                  )}
+                  {selectedQueue.maxCount ? (
+                    <View style={styles.metaLilButtonContainer}>
+                      <Text style={styles.metaLilButtonContainerText}>
+                        {selectedQueue.maxCount
+                          ? `Max Capacity ${selectedQueue.maxCount}`
+                          : "Not Specified"}
+                      </Text>
+                    </View>
+                  ) : (
+                    <></>
+                  )}
                 </View>
                 <View style={styles.metaSectionNoBg}>
                   <Text style={styles.metaSectionTitleNoBg}>What to Know</Text>

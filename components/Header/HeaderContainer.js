@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Icon } from "react-native-elements";
 
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import LinearGradient from "react-native-linear-gradient";
+import { LinearGradient } from "expo-linear-gradient";
 
 function HeaderContainer({
   selectedLocationObj,
   unSelectLocation,
   selectedQueue,
+  doShowInfo,
 }) {
   const [showInfo, setShowInfo] = useState(false);
 
+  useEffect(() => {
+    setShowInfo(false);
+  }, [doShowInfo]);
+
   return (
     <>
-      {/* {showInfo ? (
+      {showInfo ? (
         // <View
         //   style={{
         //     zIndex: 1,
@@ -27,32 +32,80 @@ function HeaderContainer({
         <View
           style={{
             zIndex: 1,
-            height: 500,
+            height: 350,
             flexDirection: "row",
-            justifyContent: "center",
             position: "absolute",
-            backgroundColor: "blue",
-            top: 150,
-            left: 45,
+            backgroundColor: "white",
+            top: 250,
+            left: 85,
+            width: "55%",
+            borderRadius: 9,
+            shadowColor: "#000",
+            shadowOffset: {
+              width: 5,
+              height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+
+            elevation: 5,
+            borderRadius: 9,
           }}
         >
+          <LinearGradient
+            // Button Linear Gradient
+            colors={["#ff0000", "#fffa00", "#0ade00"]}
+            style={{
+              position: "absolute",
+              left: 10,
+              right: 0,
+              top: 0,
+              height: 320,
+              width: 20,
+              marginTop: 15,
+              marginBottom: 25,
+              marginLeft: 15,
+              marginRight: 15,
+            }}
+          />
           <View
             style={{
-              width: "80%",
-              backgroundColor: "red",
-              zIndex: 1,
-              height: 500,
+              position: "absolute",
+              left: 60,
+              height: 350,
+              width: "55%",
             }}
           >
-            <LinearGradient colors={["red", "yellow", "green"]}>
-              <Text>Vertical Gradient</Text>
-            </LinearGradient>
+            <View style={{ height: "33%", paddingTop: 10 }}>
+              <View style={styles.keyItem}>
+                <Text style={styles.keyItemText}>UNACCEPTABLE:</Text>
+                <Text style={styles.keyItemTextSub}>30 minutes plus</Text>
+              </View>
+            </View>
+            <View style={{ height: "33%", justifyContent: "center" }}>
+              <View style={styles.keyItem}>
+                <Text style={styles.keyItemText}>OKAY:</Text>
+                <Text style={styles.keyItemTextSub}>16 - 29 minutes</Text>
+              </View>
+            </View>
+            <View
+              style={{
+                height: "33%",
+                flexDirection: "column-reverse",
+                paddingBottom: 10,
+              }}
+            >
+              <View style={styles.keyItem}>
+                <Text style={styles.keyItemText}>GOOD:</Text>
+                <Text style={styles.keyItemTextSub}>0 - 15 minutes</Text>
+              </View>
+            </View>
           </View>
         </View>
       ) : (
         // </View>
         <></>
-      )} */}
+      )}
       {selectedLocationObj ? (
         <View
           style={
@@ -123,10 +176,9 @@ function HeaderContainer({
                   overflow: "visible",
                   width: 100,
                 }}
-                // onPress={() => {
-                // setShowInfo(!showInfo);
-                // alert();
-                // }}
+                onPress={() => {
+                  setShowInfo(!showInfo);
+                }}
               >
                 <View
                   style={{
@@ -136,13 +188,13 @@ function HeaderContainer({
                     top: -10,
                   }}
                 >
-                  {/* <Icon
+                  <Icon
                     name={"info-circle"}
                     type="font-awesome"
-                    color="#6da8bd"
+                    color={showInfo ? "salmon" : "#6da8bd"}
                     size={23}
                     style={{ marginLeft: 10 }}
-                  /> */}
+                  />
                 </View>
               </TouchableOpacity>
             </View>
@@ -204,6 +256,13 @@ function HeaderContainer({
 }
 
 const styles = {
+  keyItem: {},
+  keyItemText: {
+    fontWeight: "600",
+  },
+  keyItemTextSub: {
+    fontWeight: "400",
+  },
   HeaderContainer: {
     height: "11%",
     backgroundColor: "white",
