@@ -14,6 +14,7 @@ import {
   View,
   Text,
   FlatList,
+  TextInput,
   RefreshControl,
   TouchableOpacity,
 } from "react-native";
@@ -31,6 +32,7 @@ class QueuesList extends Component {
       selectedLocationObjReal: false,
       filteredQueues: false,
       doShowInfo: false,
+      searchInput: "",
     };
     this.scrollRef = React.createRef();
   }
@@ -40,10 +42,10 @@ class QueuesList extends Component {
     if (estHours > 0) {
       return styles.metaSectionCenterContentRed;
     }
-    if (estMinutes > 29) {
+    if (estMinutes > 39) {
       return styles.metaSectionCenterContentRed;
     }
-    if (estMinutes > 15) {
+    if (estMinutes > 24) {
       return styles.metaSectionCenterContentYellow;
     } else {
       return styles.metaSectionCenterContentGreen;
@@ -64,7 +66,7 @@ class QueuesList extends Component {
   };
   setCountTextSub = () => {
     const { estMinutes, estHours } = this.state.selectedQueue;
-    if (estHours > 0 || estMinutes < 16) {
+    if (estHours > 0 || estMinutes < 25) {
       return styles.countTextSub;
     } else {
       return {
@@ -331,6 +333,8 @@ class QueuesList extends Component {
     }
   }
 
+  doRunSearch = () => {};
+
   render() {
     let {
       isRefreshing,
@@ -369,6 +373,34 @@ class QueuesList extends Component {
             backgroundColor: `${selectedQueue ? "#9191" : "#f5f5f5"}`,
           }}
         >
+          <View
+            style={{
+              flexDirection: "row",
+              height: 40,
+              alignItems: "center",
+              marginTop: 5,
+              marginLeft: 15,
+              marginRight: 15,
+            }}
+          >
+            <TextInput
+              style={{ width: "80%", height: "90%", paddingLeft: 10 }}
+              placeholder="Search"
+              backgroundColor="white"
+              borderRadius={9}
+              onChangeText={() => {}}
+            />
+            <TouchableOpacity
+              style={{
+                marginLeft: 5,
+                flexDirection: "row",
+                justifyContent: "center",
+                flex: 1,
+              }}
+            >
+              <Text style={{ fontWeight: "900", color: "#6da8bd" }}>Clear</Text>
+            </TouchableOpacity>
+          </View>
           <ScrollView
             ref={(ref) => (this.scrollRef = ref)}
             contentContainerStyle={styles.QueuesListContainer}

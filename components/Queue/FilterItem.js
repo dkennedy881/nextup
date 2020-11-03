@@ -6,6 +6,7 @@ import {
   View,
   Text,
   TouchableOpacity,
+  Keyboard,
 } from "react-native";
 
 function FilterItem({ name, setHandler, obj = null }) {
@@ -15,6 +16,7 @@ function FilterItem({ name, setHandler, obj = null }) {
     } else {
       setHandler(name);
     }
+    Keyboard.dismiss();
   };
   return (
     <TouchableOpacity

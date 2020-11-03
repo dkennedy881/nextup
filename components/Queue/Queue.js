@@ -14,10 +14,10 @@ function Queue({ queue, selectQueue, index, list }) {
     if (estHours > 0) {
       return styles.queueCountContainerRed;
     }
-    if (estMinutes > 29) {
+    if (estMinutes > 39) {
       return styles.queueCountContainerRed;
     }
-    if (estMinutes > 15) {
+    if (estMinutes > 24) {
       return styles.queueCountContainerYellow;
     } else {
       return styles.queueCountContainerGreen;
@@ -26,7 +26,7 @@ function Queue({ queue, selectQueue, index, list }) {
 
   const setQueueCountText = () => {
     const { estMinutes, estHours } = queue;
-    if (estHours > 0 || estMinutes < 16) {
+    if (estHours > 1 || estMinutes < 20 || estMinutes > 39) {
       return styles.queueCountText;
     } else {
       return {
@@ -42,7 +42,7 @@ function Queue({ queue, selectQueue, index, list }) {
 
   const setQueueCountTextSub = () => {
     const { estMinutes, estHours } = queue;
-    if (estHours > 0 || estMinutes < 16) {
+    if (estHours > 1 || estMinutes < 25 || estMinutes > 39) {
       return styles.queueCountTextSub;
     } else {
       return {
@@ -416,6 +416,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: 10,
     marginBottom: 10,
+    flexWrap: "wrap",
   },
   addressText: {
     fontSize: 15,

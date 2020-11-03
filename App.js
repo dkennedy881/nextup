@@ -13,6 +13,7 @@ import Axios from "axios";
 //comps
 import HeaderContainer from "./components/Header/HeaderContainer";
 import QueueList from "./components/Queue/QueuesList";
+import QueuesListNew from "./components/Queue/QueuesListNew";
 //containers
 import SignUpContainer from "./components/SignUp/SignUpContainer";
 import LogInContainer from "./components/LogIn/LogInContainer";
@@ -185,7 +186,7 @@ export default class App extends Component {
     return (
       <View style={styles.loggedInContainer}>
         <StatusBar barStyle="dark-content" />
-        <QueueList />
+        <QueuesListNew />
       </View>
     );
   }

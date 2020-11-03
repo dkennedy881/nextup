@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "nextup",
+    "name": "Next Up",
     "slug": "nextup",
     "platforms": ["ios", "android", "web"],
-    "version": "1.0.3",
+    "version": "1.1.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

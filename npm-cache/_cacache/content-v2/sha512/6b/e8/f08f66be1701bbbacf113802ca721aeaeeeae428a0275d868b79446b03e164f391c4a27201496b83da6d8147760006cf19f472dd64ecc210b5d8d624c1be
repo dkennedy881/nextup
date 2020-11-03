@@ -1,0 +1,645 @@
+{
+  "_id" : "eslint-plugin-chai-friendly",
+  "_rev" : "17-33d4494b3f9afd89e5d7b2dce30dbd4e",
+  "name" : "eslint-plugin-chai-friendly",
+  "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+  "dist-tags" : {
+    "latest" : "0.6.0"
+  },
+  "versions" : {
+    "0.6.0" : {
+      "name" : "eslint-plugin-chai-friendly",
+      "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+      "version" : "0.6.0",
+      "author" : {
+        "name" : "Ihor Diachenko"
+      },
+      "homepage" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly#readme",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/ihordiachenko/eslint-plugin-chai-friendly.git"
+      },
+      "contributors" : [ {
+        "name" : "Brett Zamir"
+      } ],
+      "bugs" : {
+        "url" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly/issues"
+      },
+      "engines" : {
+        "node" : ">=0.10.0"
+      },
+      "main" : "lib/index.js",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/eslint-plugin-chai-friendly/-/eslint-plugin-chai-friendly-0.6.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-chai-friendly%2F-%2Feslint-plugin-chai-friendly-0.6.0.tgz",
+        "shasum" : "54052fab79302ed0cea76ab997351ea4809bfb77"
+      },
+      "dependencies" : {
+      },
+      "devDependencies" : {
+        "babel-eslint" : "^10.1.0",
+        "eslint" : "~6.6.0",
+        "mocha" : "^7.1.1",
+        "nyc" : "^15.0.1"
+      },
+      "peerDependencies" : {
+        "eslint" : ">=3.0.0"
+      },
+      "keywords" : [ "eslint", "eslintplugin", "eslint-plugin", "chai", "lint" ],
+      "license" : "MIT",
+      "maintainers" : [ {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      } ],
+      "directories" : {
+      },
+      "scripts" : {
+        "lint" : "eslint .",
+        "test" : "nyc mocha tests --recursive"
+      },
+      "_npmVersion" : "6.12.0",
+      "_npmUser" : {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      },
+      "_id" : "eslint-plugin-chai-friendly@0.6.0",
+      "gitHead" : "6e5b689adaa2b7787e7355a8550049539bb3200b",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/eslint-plugin-chai-friendly_0.6.0_1587733101772_0.8857362666029978"
+      },
+      "_nodeVersion" : "10.15.3"
+    },
+    "0.3.4" : {
+      "name" : "eslint-plugin-chai-friendly",
+      "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+      "version" : "0.3.4",
+      "author" : {
+        "name" : "Ihor Diachenko"
+      },
+      "homepage" : "https: //github.com/ihordiachenko/eslint-plugin-chai-friendly#readme",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/ihordiachenko/eslint-plugin-chai-friendly.git"
+      },
+      "bugs" : {
+        "url" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly/issues"
+      },
+      "engines" : {
+        "node" : ">=0.10.0"
+      },
+      "main" : "lib/index.js",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/eslint-plugin-chai-friendly/-/eslint-plugin-chai-friendly-0.3.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-chai-friendly%2F-%2Feslint-plugin-chai-friendly-0.3.4.tgz",
+        "shasum" : "93f9335eb79c8ac74ea6963bf23977e096e98330"
+      },
+      "dependencies" : {
+      },
+      "optionalDependencies" : {
+      },
+      "devDependencies" : {
+        "eslint" : "~3.11.0",
+        "mocha" : "^3.0.2"
+      },
+      "peerDependencies" : {
+        "eslint" : ">=3.0.0"
+      },
+      "keywords" : [ "eslint", "eslintplugin", "eslint-plugin", "chai", "lint" ],
+      "license" : "MIT",
+      "maintainers" : [ {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      } ],
+      "directories" : {
+      },
+      "scripts" : {
+        "test" : "mocha tests --recursive"
+      },
+      "_from" : ".",
+      "_npmVersion" : "3.8.6",
+      "_npmUser" : {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      },
+      "_id" : "eslint-plugin-chai-friendly@0.3.4",
+      "_location" : "/eslint-plugin-chai-friendly",
+      "gitHead" : "c1cf0b8c37b8d1aa1e6ec5e45ef57f98d30c12be",
+      "_installable" : true,
+      "_requiredBy" : [ "#USER" ],
+      "_npmOperationalInternal" : {
+        "host" : "packages-12-west.internal.npmjs.com",
+        "tmp" : "tmp/eslint-plugin-chai-friendly-0.3.4.tgz_1492505474844_0.47422714391723275"
+      },
+      "_spec" : "eslint-plugin-chai-friendly",
+      "_shasum" : "93f9335eb79c8ac74ea6963bf23977e096e98330",
+      "_inCache" : true,
+      "_requested" : {
+        "name" : "eslint-plugin-chai-friendly",
+        "raw" : "eslint-plugin-chai-friendly",
+        "rawSpec" : "",
+        "scope" : null,
+        "spec" : "latest",
+        "type" : "tag"
+      },
+      "_where" : "/Users/user/repos/stellar-wallet-js-sdk",
+      "_args" : [ [ "eslint-plugin-chai-friendly", "/Users/user/repos/wallet-sdk" ], [ "eslint-plugin-chai-friendly", "/Users/user/repos/stellar-wallet-js-sdk" ] ],
+      "_phantomChildren" : {
+      },
+      "_shrinkwrap" : null,
+      "_nodeVersion" : "6.0.0"
+    },
+    "0.3.1" : {
+      "name" : "eslint-plugin-chai-friendly",
+      "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+      "version" : "0.3.1",
+      "author" : {
+        "name" : "Ihor Diachenko"
+      },
+      "homepage" : "https: //github.com/ihordiachenko/eslint-plugin-chai-friendly#readme",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/ihordiachenko/eslint-plugin-chai-friendly.git"
+      },
+      "bugs" : {
+        "url" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly/issues"
+      },
+      "engines" : {
+        "node" : ">=0.10.0"
+      },
+      "main" : "lib/index.js",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/eslint-plugin-chai-friendly/-/eslint-plugin-chai-friendly-0.3.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-chai-friendly%2F-%2Feslint-plugin-chai-friendly-0.3.1.tgz",
+        "shasum" : "b65560e07b1f66ad0238b0937360a43a0a309478"
+      },
+      "dependencies" : {
+      },
+      "devDependencies" : {
+        "eslint" : "~3.11.0",
+        "mocha" : "^3.0.2"
+      },
+      "peerDependencies" : {
+        "eslint" : ">=3.0.0"
+      },
+      "keywords" : [ "eslint", "eslintplugin", "eslint-plugin", "chai", "lint" ],
+      "license" : "MIT",
+      "maintainers" : [ {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      } ],
+      "directories" : {
+      },
+      "scripts" : {
+        "test" : "mocha tests --recursive"
+      },
+      "_from" : ".",
+      "_npmVersion" : "3.8.6",
+      "_npmUser" : {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      },
+      "_id" : "eslint-plugin-chai-friendly@0.3.1",
+      "gitHead" : "8771360cb0fcf05c995678e8cb1032da9bfaaa3a",
+      "_npmOperationalInternal" : {
+        "host" : "packages-12-west.internal.npmjs.com",
+        "tmp" : "tmp/eslint-plugin-chai-friendly-0.3.1.tgz_1492376913097_0.04358380567282438"
+      },
+      "_shasum" : "b65560e07b1f66ad0238b0937360a43a0a309478",
+      "_nodeVersion" : "6.0.0"
+    },
+    "0.4.0" : {
+      "name" : "eslint-plugin-chai-friendly",
+      "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+      "version" : "0.4.0",
+      "author" : {
+        "name" : "Ihor Diachenko"
+      },
+      "homepage" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly#readme",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/ihordiachenko/eslint-plugin-chai-friendly.git"
+      },
+      "bugs" : {
+        "url" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly/issues"
+      },
+      "engines" : {
+        "node" : ">=0.10.0"
+      },
+      "main" : "lib/index.js",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/eslint-plugin-chai-friendly/-/eslint-plugin-chai-friendly-0.4.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-chai-friendly%2F-%2Feslint-plugin-chai-friendly-0.4.0.tgz",
+        "shasum" : "aad72b4f0ea3cd2655dd92528f66bc7da7a8c9fe"
+      },
+      "dependencies" : {
+      },
+      "devDependencies" : {
+        "eslint" : "~3.11.0",
+        "mocha" : "^3.0.2"
+      },
+      "peerDependencies" : {
+        "eslint" : ">=3.0.0"
+      },
+      "keywords" : [ "eslint", "eslintplugin", "eslint-plugin", "chai", "lint" ],
+      "license" : "MIT",
+      "maintainers" : [ {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      } ],
+      "directories" : {
+      },
+      "scripts" : {
+        "test" : "mocha tests --recursive"
+      },
+      "_npmVersion" : "5.3.0",
+      "_npmUser" : {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      },
+      "_id" : "eslint-plugin-chai-friendly@0.4.0",
+      "gitHead" : "ea98d65a2f3466167df607dcfbbc8a70dd326cdd",
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/eslint-plugin-chai-friendly-0.4.0.tgz_1502182905330_0.8461711453273892"
+      },
+      "_nodeVersion" : "8.2.1"
+    },
+    "0.3.2" : {
+      "name" : "eslint-plugin-chai-friendly",
+      "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+      "version" : "0.3.2",
+      "author" : {
+        "name" : "Ihor Diachenko"
+      },
+      "homepage" : "https: //github.com/ihordiachenko/eslint-plugin-chai-friendly#readme",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/ihordiachenko/eslint-plugin-chai-friendly.git"
+      },
+      "bugs" : {
+        "url" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly/issues"
+      },
+      "engines" : {
+        "node" : ">=0.10.0"
+      },
+      "main" : "lib/index.js",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/eslint-plugin-chai-friendly/-/eslint-plugin-chai-friendly-0.3.2.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-chai-friendly%2F-%2Feslint-plugin-chai-friendly-0.3.2.tgz",
+        "shasum" : "63fb9d41b1566d281f4b17eb6c524ef5a539ce41"
+      },
+      "dependencies" : {
+      },
+      "devDependencies" : {
+        "eslint" : "~3.11.0",
+        "mocha" : "^3.0.2"
+      },
+      "peerDependencies" : {
+        "eslint" : ">=3.0.0"
+      },
+      "keywords" : [ "eslint", "eslintplugin", "eslint-plugin", "chai", "lint" ],
+      "license" : "MIT",
+      "maintainers" : [ {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      } ],
+      "directories" : {
+      },
+      "scripts" : {
+        "test" : "mocha tests --recursive"
+      },
+      "_from" : ".",
+      "_npmVersion" : "3.8.6",
+      "_npmUser" : {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      },
+      "_id" : "eslint-plugin-chai-friendly@0.3.2",
+      "gitHead" : "c1cf0b8c37b8d1aa1e6ec5e45ef57f98d30c12be",
+      "_npmOperationalInternal" : {
+        "host" : "packages-18-east.internal.npmjs.com",
+        "tmp" : "tmp/eslint-plugin-chai-friendly-0.3.2.tgz_1492377600496_0.6809348179958761"
+      },
+      "_shasum" : "63fb9d41b1566d281f4b17eb6c524ef5a539ce41",
+      "_nodeVersion" : "6.0.0"
+    },
+    "0.4.1" : {
+      "name" : "eslint-plugin-chai-friendly",
+      "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+      "version" : "0.4.1",
+      "author" : {
+        "name" : "Ihor Diachenko"
+      },
+      "homepage" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly#readme",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/ihordiachenko/eslint-plugin-chai-friendly.git"
+      },
+      "bugs" : {
+        "url" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly/issues"
+      },
+      "engines" : {
+        "node" : ">=0.10.0"
+      },
+      "main" : "lib/index.js",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/eslint-plugin-chai-friendly/-/eslint-plugin-chai-friendly-0.4.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-chai-friendly%2F-%2Feslint-plugin-chai-friendly-0.4.1.tgz",
+        "shasum" : "9eeb17f92277ba80bb64f0e946c6936a3ae707b4"
+      },
+      "dependencies" : {
+      },
+      "devDependencies" : {
+        "eslint" : "~3.11.0",
+        "mocha" : "^3.0.2"
+      },
+      "peerDependencies" : {
+        "eslint" : ">=3.0.0"
+      },
+      "keywords" : [ "eslint", "eslintplugin", "eslint-plugin", "chai", "lint" ],
+      "license" : "MIT",
+      "maintainers" : [ {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      } ],
+      "directories" : {
+      },
+      "scripts" : {
+        "test" : "mocha tests --recursive"
+      },
+      "_npmVersion" : "5.5.1",
+      "_npmUser" : {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      },
+      "_id" : "eslint-plugin-chai-friendly@0.4.1",
+      "gitHead" : "5cefb47adc0848cc50503d357b2226c6956e8b69",
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/eslint-plugin-chai-friendly-0.4.1.tgz_1512516827915_0.5121628381311893"
+      },
+      "_nodeVersion" : "8.1.3"
+    },
+    "0.5.0" : {
+      "name" : "eslint-plugin-chai-friendly",
+      "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+      "version" : "0.5.0",
+      "author" : {
+        "name" : "Ihor Diachenko"
+      },
+      "homepage" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly#readme",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/ihordiachenko/eslint-plugin-chai-friendly.git"
+      },
+      "contributors" : [ {
+        "name" : "Brett Zamir"
+      } ],
+      "bugs" : {
+        "url" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly/issues"
+      },
+      "engines" : {
+        "node" : ">=0.10.0"
+      },
+      "main" : "lib/index.js",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/eslint-plugin-chai-friendly/-/eslint-plugin-chai-friendly-0.5.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-chai-friendly%2F-%2Feslint-plugin-chai-friendly-0.5.0.tgz",
+        "shasum" : "42418c35c4a83584f3b98449b7b8f4f56205a0a3"
+      },
+      "dependencies" : {
+      },
+      "devDependencies" : {
+        "eslint" : "~6.6.0",
+        "mocha" : "^6.2.2"
+      },
+      "peerDependencies" : {
+        "eslint" : ">=3.0.0"
+      },
+      "keywords" : [ "eslint", "eslintplugin", "eslint-plugin", "chai", "lint" ],
+      "license" : "MIT",
+      "maintainers" : [ {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      } ],
+      "directories" : {
+      },
+      "scripts" : {
+        "lint" : "eslint .",
+        "test" : "mocha tests --recursive"
+      },
+      "_npmVersion" : "6.12.0",
+      "_npmUser" : {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      },
+      "_id" : "eslint-plugin-chai-friendly@0.5.0",
+      "gitHead" : "6161bfba75dae326dae5e7d835a2a8c6c484c4f8",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/eslint-plugin-chai-friendly_0.5.0_1572171175037_0.2402049698416675"
+      },
+      "_nodeVersion" : "10.15.3"
+    },
+    "0.3.5" : {
+      "name" : "eslint-plugin-chai-friendly",
+      "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+      "version" : "0.3.5",
+      "author" : {
+        "name" : "Ihor Diachenko"
+      },
+      "homepage" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly#readme",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/ihordiachenko/eslint-plugin-chai-friendly.git"
+      },
+      "bugs" : {
+        "url" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly/issues"
+      },
+      "engines" : {
+        "node" : ">=0.10.0"
+      },
+      "main" : "lib/index.js",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/eslint-plugin-chai-friendly/-/eslint-plugin-chai-friendly-0.3.5.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-chai-friendly%2F-%2Feslint-plugin-chai-friendly-0.3.5.tgz",
+        "shasum" : "1dd6dec94b424a577759d673667ef1e4a8103a66"
+      },
+      "dependencies" : {
+      },
+      "devDependencies" : {
+        "eslint" : "~3.11.0",
+        "mocha" : "^3.0.2"
+      },
+      "peerDependencies" : {
+        "eslint" : ">=3.0.0"
+      },
+      "keywords" : [ "eslint", "eslintplugin", "eslint-plugin", "chai", "lint" ],
+      "license" : "MIT",
+      "maintainers" : [ {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      } ],
+      "directories" : {
+      },
+      "scripts" : {
+        "test" : "mocha tests --recursive"
+      },
+      "_from" : ".",
+      "_npmVersion" : "3.8.6",
+      "_npmUser" : {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      },
+      "_id" : "eslint-plugin-chai-friendly@0.3.5",
+      "gitHead" : "fdf55047d91b1b741df7fc2a5e158a8e8ae24a85",
+      "_npmOperationalInternal" : {
+        "host" : "packages-12-west.internal.npmjs.com",
+        "tmp" : "tmp/eslint-plugin-chai-friendly-0.3.5.tgz_1492506067076_0.8304279728326946"
+      },
+      "_shasum" : "1dd6dec94b424a577759d673667ef1e4a8103a66",
+      "_nodeVersion" : "6.0.0"
+    },
+    "0.3.6" : {
+      "name" : "eslint-plugin-chai-friendly",
+      "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+      "version" : "0.3.6",
+      "author" : {
+        "name" : "Ihor Diachenko"
+      },
+      "homepage" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly#readme",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/ihordiachenko/eslint-plugin-chai-friendly.git"
+      },
+      "bugs" : {
+        "url" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly/issues"
+      },
+      "engines" : {
+        "node" : ">=0.10.0"
+      },
+      "main" : "lib/index.js",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/eslint-plugin-chai-friendly/-/eslint-plugin-chai-friendly-0.3.6.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-chai-friendly%2F-%2Feslint-plugin-chai-friendly-0.3.6.tgz",
+        "shasum" : "25df1a8f91326e05767fd857a908be99ddedfc57"
+      },
+      "dependencies" : {
+      },
+      "devDependencies" : {
+        "eslint" : "~3.11.0",
+        "mocha" : "^3.0.2"
+      },
+      "peerDependencies" : {
+        "eslint" : ">=3.0.0"
+      },
+      "keywords" : [ "eslint", "eslintplugin", "eslint-plugin", "chai", "lint" ],
+      "license" : "MIT",
+      "maintainers" : [ {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      } ],
+      "directories" : {
+      },
+      "scripts" : {
+        "test" : "mocha tests --recursive"
+      },
+      "_from" : ".",
+      "_npmVersion" : "3.8.6",
+      "_npmUser" : {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      },
+      "_id" : "eslint-plugin-chai-friendly@0.3.6",
+      "gitHead" : "277fe13f5b0bc8bb97f7a9c7538ff3f98416e9cc",
+      "_npmOperationalInternal" : {
+        "host" : "packages-12-west.internal.npmjs.com",
+        "tmp" : "tmp/eslint-plugin-chai-friendly-0.3.6.tgz_1492722763189_0.4628997831605375"
+      },
+      "_shasum" : "25df1a8f91326e05767fd857a908be99ddedfc57",
+      "_nodeVersion" : "6.0.0"
+    },
+    "0.2.0" : {
+      "name" : "eslint-plugin-chai-friendly",
+      "description" : "This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.",
+      "version" : "0.2.0",
+      "author" : {
+        "name" : "Ihor Diachenko"
+      },
+      "engines" : {
+        "node" : ">=0.10.0"
+      },
+      "main" : "lib/index.js",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/eslint-plugin-chai-friendly/-/eslint-plugin-chai-friendly-0.2.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Feslint-plugin-chai-friendly%2F-%2Feslint-plugin-chai-friendly-0.2.0.tgz",
+        "shasum" : "77666ea7a837ed11c5d307577e85287656f5d338"
+      },
+      "dependencies" : {
+        "requireindex" : "~1.1.0"
+      },
+      "devDependencies" : {
+        "eslint" : "~3.11.0",
+        "mocha" : "^3.0.2"
+      },
+      "keywords" : [ "eslint", "eslintplugin", "eslint-plugin" ],
+      "license" : "ISC",
+      "maintainers" : [ {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      } ],
+      "directories" : {
+      },
+      "scripts" : {
+        "test" : "mocha tests --recursive"
+      },
+      "_from" : ".",
+      "_npmVersion" : "3.8.6",
+      "_npmUser" : {
+        "name" : "ihor.diachenko",
+        "email" : "ih.diachenko@gmail.com"
+      },
+      "_id" : "eslint-plugin-chai-friendly@0.2.0",
+      "gitHead" : "3e00a5f5977aae513e79330646554079611b2efa",
+      "_npmOperationalInternal" : {
+        "host" : "packages-18-east.internal.npmjs.com",
+        "tmp" : "tmp/eslint-plugin-chai-friendly-0.2.0.tgz_1480369635825_0.057899941224604845"
+      },
+      "_shasum" : "77666ea7a837ed11c5d307577e85287656f5d338",
+      "_nodeVersion" : "5.11.1"
+    }
+  },
+  "readme" : "# eslint-plugin-chai-friendly\n\n[![npm](https://img.shields.io/npm/v/eslint-plugin-chai-friendly.svg)](https://www.npmjs.com/package/eslint-plugin-chai-friendly) [![npm](https://img.shields.io/npm/dm/eslint-plugin-chai-friendly)](https://www.npmjs.com/package/eslint-plugin-chai-friendly)\n\nThis plugin overrides `no-unused-expressions` to make it friendly towards chai `expect` and `should` statements.\n\n```javascript\n// this\nexpect(foo).to.be.true;\nfoo.should.be.true;\n\n// instead of this\nexpect(foo).to.be.true; // eslint-disable-line no-unused-expressions\nfoo.should.be.true; // eslint-disable-line no-unused-expressions\n```\n\n## Installation\n\nYou'll first need to install [ESLint](http://eslint.org):\n\n```bash\nnpm i eslint --save-dev\n```\n\nNext, install `eslint-plugin-chai-friendly`:\n\n```bash\nnpm install eslint-plugin-chai-friendly --save-dev\n```\n\n**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-chai-friendly` globally.\n\n## Usage\n\nAdd `chai-friendly` to the plugins section of your `.eslintrc.*` configuration file. You can omit the `eslint-plugin-` prefix:\n\n```json\n{\n    \"plugins\": [\n        \"chai-friendly\"\n    ]\n}\n```\n\n\nThen disable original `no-unused-expressions` rule and configure chai-friendly replacement under the rules section.\n\n```json\n{\n    \"rules\": {\n        \"no-unused-expressions\": 0,\n        \"chai-friendly/no-unused-expressions\": 2\n    }\n}\n```\n\nIf you don't need to tweak the above rule settings, you can instead\njust add the following to your config file's `extends` and the above\nwill be applied automatically:\n\n```json\n{\n  \"extends\": [\"plugin:chai-friendly/recommended\"]\n}\n```\n\n## Options\n\nThis rule, in its default state, does not require any arguments. If you would like to enable one or more of the following you may pass an object with the options set as follows:\n\n- `allowShortCircuit` set to `true` will allow you to use short circuit evaluations in your expressions (Default: `false`).\n- `allowTernary` set to `true` will enable you to use ternary operators in your expressions similarly to short circuit evaluations (Default: `false`).\n- `allowTaggedTemplates` set to `true` will enable you to use tagged template literals in your expressions (Default: `false`).\n\nThese options allow unused expressions only if all of the code paths either directly change the state (for example, assignment statement) or could have side effects (for example, function call).\n\nMore info in the original rule's [docs](http://eslint.org/docs/rules/no-unused-expressions#options).\n\n## Supported Rules\n\n- `chai-friendly/no-unused-expressions`\n",
+  "maintainers" : [ {
+    "name" : "ihor.diachenko",
+    "email" : "ih.diachenko@gmail.com"
+  } ],
+  "author" : {
+    "name" : "Ihor Diachenko"
+  },
+  "time" : {
+    "0.3.3" : "2017-04-17T09:13:05.609Z",
+    "0.6.0" : "2020-04-24T12:58:21.910Z",
+    "0.3.4" : "2017-04-18T08:51:16.567Z",
+    "0.3.1" : "2017-04-16T21:08:34.914Z",
+    "0.4.0" : "2017-08-08T09:01:46.270Z",
+    "0.3.2" : "2017-04-16T21:20:01.204Z",
+    "0.4.1" : "2017-12-05T23:33:48.817Z",
+    "0.5.0" : "2019-10-27T10:12:55.184Z",
+    "created" : "2016-11-28T21:47:16.381Z",
+    "0.3.5" : "2017-04-18T09:01:08.971Z",
+    "0.3.6" : "2017-04-20T21:12:44.999Z",
+    "0.2.0" : "2016-11-28T21:47:16.381Z",
+    "modified" : "2020-04-24T12:58:24.333Z"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "git+https://github.com/ihordiachenko/eslint-plugin-chai-friendly.git"
+  },
+  "users" : {
+    "xueboren" : true
+  },
+  "readmeFilename" : "README.md",
+  "homepage" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly#readme",
+  "keywords" : [ "eslint", "eslintplugin", "eslint-plugin", "chai", "lint" ],
+  "contributors" : [ {
+    "name" : "Brett Zamir"
+  } ],
+  "bugs" : {
+    "url" : "https://github.com/ihordiachenko/eslint-plugin-chai-friendly/issues"
+  },
+  "license" : "MIT"
+}

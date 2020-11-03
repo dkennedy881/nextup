@@ -1,0 +1,4049 @@
+{
+  "_id" : "expo-optimize",
+  "_rev" : "76-d28183ccb4c720c815bcb279aa9238d7",
+  "name" : "expo-optimize",
+  "description" : "Compress the assets in your project",
+  "dist-tags" : {
+    "latest" : "0.1.56"
+  },
+  "versions" : {
+    "0.0.6" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.0.6",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.0.6.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.0.6.tgz",
+        "shasum" : "016632de5a282208ec8c1aaf986ee13611271667"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.4",
+        "@expo/config" : "^2.5.5",
+        "@expo/image-utils" : "^0.2.11",
+        "@expo/json-file" : "^8.2.4",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.0.6",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.0.6_1578508243597_0.9174429311328465"
+      },
+      "_nodeVersion" : "12.14.0"
+    },
+    "0.1.24-alpha.0" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.24-alpha.0",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.24-alpha.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.24-alpha.0.tgz",
+        "shasum" : "64f5a9ff9c51e311cba7774065abdf242d34e137"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.11",
+        "@expo/config" : "3.2.1-alpha.0",
+        "@expo/image-utils" : "0.2.22",
+        "@expo/json-file" : "8.2.13",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "globby" : "11.0.0",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "quinlanj",
+        "email" : "quinlanjung@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.24-alpha.0",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.24-alpha.0_1588631249062_0.16565076552346047"
+      },
+      "_nodeVersion" : "12.16.2"
+    },
+    "0.0.7" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.0.7",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.0.7.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.0.7.tgz",
+        "shasum" : "3a86ee0cf3c2c1c0097e5b6ff7449042f2515981"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.5",
+        "@expo/config" : "^2.5.6",
+        "@expo/image-utils" : "^0.2.12",
+        "@expo/json-file" : "^8.2.5",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.4.1",
+      "_npmUser" : {
+        "name" : "dsokal",
+        "email" : "dominiksokal@gmail.com"
+      },
+      "_id" : "expo-optimize@0.0.7",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.0.7_1579008565911_0.4640952948181023"
+      },
+      "_nodeVersion" : "8.15.1"
+    },
+    "0.0.4" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.0.4",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.0.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.0.4.tgz",
+        "shasum" : "18cadc10348c0705a918bb9efd730ede0b0fdb0a"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.3",
+        "@expo/config" : "^2.5.3",
+        "@expo/image-utils" : "^0.2.10",
+        "@expo/json-file" : "^8.2.3",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.0.4",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.0.4_1576627948003_0.08621048533265152"
+      },
+      "_nodeVersion" : "12.3.1"
+    },
+    "0.0.5" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.0.5",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.0.5.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.0.5.tgz",
+        "shasum" : "0db6bb5019cb7fbc3db57c1dd9a431b8c0eae10f"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.3",
+        "@expo/config" : "^2.5.4",
+        "@expo/image-utils" : "^0.2.10",
+        "@expo/json-file" : "^8.2.3",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.0.5",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.0.5_1578352909885_0.8150027563792617"
+      },
+      "_nodeVersion" : "12.14.0"
+    },
+    "0.1.19" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.19",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.19.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.19.tgz",
+        "shasum" : "42cab2caac05c10f5fa26ed84c98554079e981dc"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.8",
+        "@expo/config" : "3.1.1",
+        "@expo/image-utils" : "0.2.19",
+        "@expo/json-file" : "8.2.9",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.19",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.19_1587013202251_0.7429012498252798"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.1.18" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.18",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.18.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.18.tgz",
+        "shasum" : "a089e4da27884211c86d33bdb5e28c83365f9ad8"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.8",
+        "@expo/config" : "3.1.0",
+        "@expo/image-utils" : "0.2.19",
+        "@expo/json-file" : "8.2.9",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.18",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.18_1586911722285_0.39312920881889957"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.0.8" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.0.8",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.0.8.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.0.8.tgz",
+        "shasum" : "972d72a2b9b31bcff72e056d6268f621e7a85bd2"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.5",
+        "@expo/config" : "2.5.7",
+        "@expo/image-utils" : "^0.2.12",
+        "@expo/json-file" : "^8.2.5",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.0.8",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.0.8_1580764494466_0.9981133184206006"
+      },
+      "_nodeVersion" : "12.14.0"
+    },
+    "0.1.17" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.17",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.17.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.17.tgz",
+        "shasum" : "ec902a7238b99a1d60ac88509dbc2fcc5a09e988"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.8",
+        "@expo/config" : "3.0.8",
+        "@expo/image-utils" : "0.2.18",
+        "@expo/json-file" : "8.2.8",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.17",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.17_1586563906887_0.8216733033967321"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.1.16" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.16",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.16.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.16.tgz",
+        "shasum" : "a0a96527c10bd5312f2d3400898d7c4c7c98182b"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.8",
+        "@expo/config" : "3.0.7",
+        "@expo/image-utils" : "0.2.18",
+        "@expo/json-file" : "8.2.8",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "dsokal",
+        "email" : "dominiksokal@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.16",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.16_1586352936372_0.1831455575476062"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.0.2" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.0.2",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.0.2.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.0.2.tgz",
+        "shasum" : "0db5131ac58004bba5965541d4cd8743a76cf3b9"
+      },
+      "dependencies" : {
+        "@expo/image-utils" : "^0.2.7"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.1",
+        "@expo/config" : "^2.5.1",
+        "@expo/json-file" : "^8.2.1",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "rimraf" : "2.6.3",
+        "typescript" : "^3.5.3",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ --external @expo/image-utils",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --external @expo/image-utils --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.10.2",
+      "_npmUser" : {
+        "name" : "evanbacon",
+        "email" : "baconbrix@gmail.com"
+      },
+      "_id" : "expo-optimize@0.0.2",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.0.2_1574753869679_0.7107025764282093"
+      },
+      "_nodeVersion" : "10.14.1"
+    },
+    "0.0.3" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.0.3",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.0.3.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.0.3.tgz",
+        "shasum" : "2cff94916ddebc1a9514674551ea06f4f4b639b4"
+      },
+      "dependencies" : {
+        "@expo/image-utils" : "^0.2.9"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.2",
+        "@expo/config" : "^2.5.2",
+        "@expo/json-file" : "^8.2.2",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "rimraf" : "2.6.3",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ --external @expo/image-utils",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --external @expo/image-utils --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.0.3",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.0.3_1575662607831_0.8923779757514541"
+      },
+      "_nodeVersion" : "12.3.1"
+    },
+    "0.0.0" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.0.0",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.0.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.0.0.tgz",
+        "shasum" : "0cf71a2e47e2121583fc7569fc1fa5f87920bab1"
+      },
+      "dependencies" : {
+        "@expo/config" : "^2.4.0",
+        "@expo/image-utils" : "^0.2.7",
+        "@expo/json-file" : "^8.2.1"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.1",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "rimraf" : "2.6.3",
+        "typescript" : "^3.5.3",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ --external @expo/image-utils",
+        "build:prod" : "yarn run build --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.10.2",
+      "_npmUser" : {
+        "name" : "evanbacon",
+        "email" : "baconbrix@gmail.com"
+      },
+      "_id" : "expo-optimize@0.0.0",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.0.0_1574113867497_0.158852003853178"
+      },
+      "_nodeVersion" : "10.14.1"
+    },
+    "0.0.1" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.0.1",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.0.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.0.1.tgz",
+        "shasum" : "2ab920d22b52bdd4f319300c199345ac600a608c"
+      },
+      "dependencies" : {
+        "@expo/config" : "^2.5.1",
+        "@expo/image-utils" : "^0.2.7",
+        "@expo/json-file" : "^8.2.1"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.1",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "rimraf" : "2.6.3",
+        "typescript" : "^3.5.3",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ --external @expo/image-utils",
+        "build:prod" : "yarn run build --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.10.2",
+      "_npmUser" : {
+        "name" : "evanbacon",
+        "email" : "baconbrix@gmail.com"
+      },
+      "_id" : "expo-optimize@0.0.1",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.0.1_1574367777195_0.01629907282758447"
+      },
+      "_nodeVersion" : "10.14.1"
+    },
+    "0.1.26" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.26",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.26.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.26.tgz",
+        "shasum" : "90fbe514bd0f6f64d55c54ccaa79f568f84a0551"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.13",
+        "@expo/config" : "3.2.3",
+        "@expo/image-utils" : "0.2.24",
+        "@expo/json-file" : "8.2.15",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.26",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.26_1589325244272_0.542116647574143"
+      },
+      "_nodeVersion" : "14.2.0"
+    },
+    "0.1.25" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.25",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.25.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.25.tgz",
+        "shasum" : "55711838c4dfb904ad88fcaa39c14b6192a124ad"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.12",
+        "@expo/config" : "3.2.2",
+        "@expo/image-utils" : "0.2.23",
+        "@expo/json-file" : "8.2.14",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "quinlanj",
+        "email" : "quinlanjung@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.25",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.25_1589228865442_0.8371963161752325"
+      },
+      "_nodeVersion" : "12.16.2"
+    },
+    "0.1.24" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.24",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.24.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.24.tgz",
+        "shasum" : "5dbcebc22c33b84033fa8c17de5c38dd4cfe08ef"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.11",
+        "@expo/config" : "3.2.1",
+        "@expo/image-utils" : "0.2.22",
+        "@expo/json-file" : "8.2.13",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.24",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.24_1588912254394_0.16239678874519314"
+      },
+      "_nodeVersion" : "14.2.0"
+    },
+    "0.1.23" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.23",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.23.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.23.tgz",
+        "shasum" : "5afd02cab0dc12fe8e195d795a4378d10a1eaf7c"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.11",
+        "@expo/config" : "3.2.0",
+        "@expo/image-utils" : "0.2.22",
+        "@expo/json-file" : "8.2.13",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.2",
+      "_npmUser" : {
+        "name" : "fson",
+        "email" : "ville.immonen@iki.fi"
+      },
+      "_id" : "expo-optimize@0.1.23",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.23_1588195705894_0.5893580804072964"
+      },
+      "_nodeVersion" : "12.13.0"
+    },
+    "0.1.22" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.22",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.22.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.22.tgz",
+        "shasum" : "a13fc16507a1acc2b491ed8670662bc28db621d3"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.10",
+        "@expo/config" : "3.1.4",
+        "@expo/image-utils" : "0.2.21",
+        "@expo/json-file" : "8.2.12",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.22",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.22_1587857331910_0.647339394389437"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.1.21" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.21",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.21.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.21.tgz",
+        "shasum" : "1afb3d0d8766ce6bc4450d7876003b8efe01f4c3"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.9",
+        "@expo/config" : "3.1.3",
+        "@expo/image-utils" : "0.2.20",
+        "@expo/json-file" : "8.2.11",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.21",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.21_1587607749166_0.7454822837873483"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.1.20" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.20",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.20.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.20.tgz",
+        "shasum" : "8ac7b5807ac5af89d32b84ce1eb4d352ed93e595"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.8",
+        "@expo/config" : "3.1.2",
+        "@expo/image-utils" : "0.2.19",
+        "@expo/json-file" : "8.2.10",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.9.0",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.20",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.20_1587317116001_0.8970422221083685"
+      },
+      "_nodeVersion" : "12.4.0"
+    },
+    "0.1.29" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.29",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.29.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.29.tgz",
+        "shasum" : "4e037ac82be3bc288dfdd1b548d5aa5f1e9e64dd"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.15",
+        "@expo/config" : "3.2.6",
+        "@expo/image-utils" : "0.2.27",
+        "@expo/json-file" : "8.2.18",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.29",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.29_1589571196493_0.9481233491111278"
+      },
+      "_nodeVersion" : "14.2.0"
+    },
+    "0.1.28" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.28",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.28.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.28.tgz",
+        "shasum" : "800e2e0a09b2da08e47a8bca15068827541a8601"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.14",
+        "@expo/config" : "3.2.5",
+        "@expo/image-utils" : "0.2.26",
+        "@expo/json-file" : "8.2.17",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.28",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.28_1589521048601_0.5475657215044625"
+      },
+      "_nodeVersion" : "14.2.0"
+    },
+    "0.1.27" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.27",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.27.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.27.tgz",
+        "shasum" : "7aa471edb357497561902ab91937d9cc474cee11"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.13",
+        "@expo/config" : "3.2.4",
+        "@expo/image-utils" : "0.2.25",
+        "@expo/json-file" : "8.2.16",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.27",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.27_1589506851213_0.992764037033526"
+      },
+      "_nodeVersion" : "14.2.0"
+    },
+    "0.1.37" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.37",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.37.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.37.tgz",
+        "shasum" : "710497335a3bd3578017878e7313bac3a8111de5"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.14"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.16",
+        "@expo/image-utils" : "0.3.0",
+        "@expo/json-file" : "8.2.21",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.37",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.37_1593115653476_0.6891966770613025"
+      },
+      "_nodeVersion" : "14.2.0"
+    },
+    "0.1.36" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.36",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.36.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.36.tgz",
+        "shasum" : "18a87a66b550f34952bbfa7e41905477c1b84431"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.13"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.16",
+        "@expo/image-utils" : "0.3.0",
+        "@expo/json-file" : "8.2.21",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.36",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.36_1592960141397_0.2562241991213994"
+      },
+      "_nodeVersion" : "14.2.0"
+    },
+    "0.1.35" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.35",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.35.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.35.tgz",
+        "shasum" : "16b730502cb13f04fa5098698ab66fb151e7ea13"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.12"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.16",
+        "@expo/image-utils" : "0.3.0",
+        "@expo/json-file" : "8.2.21",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "dsokal",
+        "email" : "dominiksokal@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.35",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.35_1592555848879_0.4496505516744449"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.34" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.34",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.34.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.34.tgz",
+        "shasum" : "037e541e10b3b6362ad382a88b68899fdfae7123"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.11"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.16",
+        "@expo/image-utils" : "0.3.0",
+        "@expo/json-file" : "8.2.21",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.2",
+      "_npmUser" : {
+        "name" : "fson",
+        "email" : "ville.immonen@iki.fi"
+      },
+      "_id" : "expo-optimize@0.1.34",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.34_1592468129050_0.06170109819177383"
+      },
+      "_nodeVersion" : "12.13.0"
+    },
+    "0.1.33" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.33",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.33.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.33.tgz",
+        "shasum" : "30820b17a6d041e9ceed5ac642a0366c4ba4a9f7"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.10"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.16",
+        "@expo/image-utils" : "0.2.29",
+        "@expo/json-file" : "8.2.21",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "tsapeta",
+        "email" : "npm@tsapeta.com"
+      },
+      "_id" : "expo-optimize@0.1.33",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.33_1592224914242_0.5944331189855967"
+      },
+      "_nodeVersion" : "14.3.0"
+    },
+    "0.1.32" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.32",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.32.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.32.tgz",
+        "shasum" : "6f08b70c0aefeb523bb9db38590f8de0271ef0b9"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.9"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.16",
+        "@expo/image-utils" : "0.2.29",
+        "@expo/json-file" : "8.2.21",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "dsokal",
+        "email" : "dominiksokal@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.32",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.32_1591095934499_0.3538548637188017"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.31" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.31",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.31.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.31.tgz",
+        "shasum" : "db1ea04b679608307b00711cbf76620cf6f49492"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.8"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.16",
+        "@expo/image-utils" : "0.2.28",
+        "@expo/json-file" : "8.2.20",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.2",
+      "_npmUser" : {
+        "name" : "fson",
+        "email" : "ville.immonen@iki.fi"
+      },
+      "_id" : "expo-optimize@0.1.31",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.31_1590580276565_0.5431369427882589"
+      },
+      "_nodeVersion" : "12.13.0"
+    },
+    "0.1.30" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.30",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.30.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.30.tgz",
+        "shasum" : "c4366254ab55941276548da2546610f479b47de3"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.7"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.16",
+        "@expo/image-utils" : "0.2.28",
+        "@expo/json-file" : "8.2.19",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "dsokal",
+        "email" : "dominiksokal@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.30",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.30_1590495401290_0.9830363921622571"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.5" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.5",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.5.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.5.tgz",
+        "shasum" : "a9f319092da3c7619922ec9422e63ba3c70c8861"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.6",
+        "@expo/config" : "2.6.5",
+        "@expo/image-utils" : "0.2.13",
+        "@expo/json-file" : "8.2.6",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.5",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.5_1584227364043_0.7294519026835495"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.6" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.6",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.6.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.6.tgz",
+        "shasum" : "158fb621e35928dcb8aef0f8f8cde9d043e47f97"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.7",
+        "@expo/config" : "2.6.6",
+        "@expo/image-utils" : "0.2.14",
+        "@expo/json-file" : "8.2.7",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.6",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.6_1584753062515_0.10737546298775102"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.3" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.3",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.3.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.3.tgz",
+        "shasum" : "efb51d6d99844a36cc1591d8dc9aacca613cac0b"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.6",
+        "@expo/config" : "2.6.3",
+        "@expo/image-utils" : "0.2.13",
+        "@expo/json-file" : "8.2.6",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.3",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.3_1584044763043_0.9354641227252989"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.4" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.4",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.4.tgz",
+        "shasum" : "4a4718b5a2c7fbecca585f6022b02384c66746a0"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.6",
+        "@expo/config" : "2.6.4",
+        "@expo/image-utils" : "0.2.13",
+        "@expo/json-file" : "8.2.6",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.4",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.4_1584211065112_0.5572705806283742"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.9" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.9",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.9.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.9.tgz",
+        "shasum" : "74d327f19179d62eb6ff723140f2bc337f72b77e"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.7",
+        "@expo/config" : "3.0.0",
+        "@expo/image-utils" : "0.2.17",
+        "@expo/json-file" : "8.2.7",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.9",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.9_1585688821301_0.8097955843048956"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.7" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.7",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.7.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.7.tgz",
+        "shasum" : "ab66cdd627c00d4c97ab0f7406927a7cbafbe324"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.7",
+        "@expo/config" : "2.7.0",
+        "@expo/image-utils" : "0.2.15",
+        "@expo/json-file" : "8.2.7",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "esamelson",
+        "email" : "eric@expo.io"
+      },
+      "_id" : "expo-optimize@0.1.7",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.7_1585255042314_0.5704016112362924"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.39" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.39",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.39.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.39.tgz",
+        "shasum" : "da046a349550effc7dffd93268ab7feb00bf3b58"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.15"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.16",
+        "@expo/image-utils" : "0.3.0",
+        "@expo/json-file" : "8.2.21",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.4",
+      "_npmUser" : {
+        "name" : "wkozyra",
+        "email" : "wojciech.kozyra@swmansion.com"
+      },
+      "_id" : "expo-optimize@0.1.39",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.39_1594725000662_0.6540650163600095"
+      },
+      "_nodeVersion" : "12.17.0"
+    },
+    "0.1.8" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.8",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.8.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.8.tgz",
+        "shasum" : "60c5bfd01568dbdb12bc87204e1c6d7688cc1cf2"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.7",
+        "@expo/config" : "2.7.0",
+        "@expo/image-utils" : "0.2.16",
+        "@expo/json-file" : "8.2.7",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "esamelson",
+        "email" : "eric@expo.io"
+      },
+      "_id" : "expo-optimize@0.1.8",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.8_1585280883777_0.2873449390242979"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.38" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.38",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.38.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.38.tgz",
+        "shasum" : "cf9fb294f7c123fda04b0c70725848f1ada2a31f"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.15"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.16",
+        "@expo/image-utils" : "0.3.0",
+        "@expo/json-file" : "8.2.21",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.38",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.38_1594147197886_0.9052259974905956"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.1.1" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.1",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.1.tgz",
+        "shasum" : "cc99a9ea216d41ea36b9dcb83a942d0b0c8240e5"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.5",
+        "@expo/config" : "2.6.1",
+        "@expo/image-utils" : "^0.2.12",
+        "@expo/json-file" : "^8.2.5",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.1",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.1_1581550064482_0.8675371360240132"
+      },
+      "_nodeVersion" : "12.14.0"
+    },
+    "0.1.2" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.2",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.2.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.2.tgz",
+        "shasum" : "cef3a5059f9a8a2b5ae8e65fd2d82b06a426d957"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.6",
+        "@expo/config" : "2.6.2",
+        "@expo/image-utils" : "0.2.13",
+        "@expo/json-file" : "8.2.6",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.7",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.2",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.2_1583546113527_0.7739452148805139"
+      },
+      "_nodeVersion" : "13.8.0"
+    },
+    "0.1.0" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.0",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.0.tgz",
+        "shasum" : "726ec9295dc0106b4ccc11c4017a8c02fcb740db"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "^0.2.5",
+        "@expo/config" : "2.6.0",
+        "@expo/image-utils" : "^0.2.12",
+        "@expo/json-file" : "^8.2.5",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cpy" : "7.3.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3",
+        "validate-npm-package-name" : "3.0.0"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.0",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.0_1581388176409_0.4280878845556888"
+      },
+      "_nodeVersion" : "12.14.0"
+    },
+    "0.1.40" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.40",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.40.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.40.tgz",
+        "shasum" : "3dd992569270ea3a993bfd00014241f27f2c35bf"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.16"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.17",
+        "@expo/image-utils" : "0.3.1",
+        "@expo/json-file" : "8.2.22",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.40",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.40_1596141976120_0.620695330680783"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.48" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.48",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.48.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.48.tgz",
+        "shasum" : "962acd8f930a9fe8f5cec2478a9a78220bea6f36"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.18",
+        "@expo/config" : "3.3.1",
+        "@expo/image-utils" : "0.3.6",
+        "@expo/json-file" : "8.2.23",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.48",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.48_1600375152204_0.5631788378812383"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.47" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.47",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.47.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.47.tgz",
+        "shasum" : "cb27ea4626341cab042c87b658ee483570a807e5"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.3.0"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.17",
+        "@expo/image-utils" : "0.3.5",
+        "@expo/json-file" : "8.2.22",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.5",
+      "_npmUser" : {
+        "name" : "sjchmiela",
+        "email" : "sjchmiela@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.47",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.47_1599567763977_0.38907690965383135"
+      },
+      "_nodeVersion" : "14.4.0"
+    },
+    "0.1.46" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.46",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.46.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.46.tgz",
+        "shasum" : "e83cb608e9c2120e5487263ba85ae30c6fdd19de"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.22"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.17",
+        "@expo/image-utils" : "0.3.4",
+        "@expo/json-file" : "8.2.22",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.46",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.46_1599004137670_0.7615021632498786"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.45" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.45",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.45.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.45.tgz",
+        "shasum" : "9932ee94fe7eb9e886a64af3e66de6672276b475"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.21"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.17",
+        "@expo/image-utils" : "0.3.3",
+        "@expo/json-file" : "8.2.22",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.45",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.45_1598549181414_0.34924010683293316"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.44" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.44",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.44.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.44.tgz",
+        "shasum" : "c1a54312a730db44b7cf4533f3b7e6897ac0e18c"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.20"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.17",
+        "@expo/image-utils" : "0.3.2",
+        "@expo/json-file" : "8.2.22",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "dsokal",
+        "email" : "dominiksokal@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.44",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.44_1598436881247_0.44882320156945044"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.43" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.43",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.43.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.43.tgz",
+        "shasum" : "f3417ef8ea5d346f93196ab9d35bce3ef17c6d32"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.19"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.17",
+        "@expo/image-utils" : "0.3.1",
+        "@expo/json-file" : "8.2.22",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "dsokal",
+        "email" : "dominiksokal@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.43",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.43_1597752285654_0.7100692985000705"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.42" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.42",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.42.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.42.tgz",
+        "shasum" : "ca436075a4c0327583c0bf9059769421be606e27"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.18"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.17",
+        "@expo/image-utils" : "0.3.1",
+        "@expo/json-file" : "8.2.22",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "dsokal",
+        "email" : "dominiksokal@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.42",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.42_1597134575782_0.06326656593410585"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.41" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.41",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.41.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.41.tgz",
+        "shasum" : "c536cbdd015c31664fb248abd4d3cb992efa8ca0"
+      },
+      "dependencies" : {
+        "@expo/config" : "3.2.17"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.17",
+        "@expo/image-utils" : "0.3.1",
+        "@expo/json-file" : "8.2.22",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/ -e @expo/config",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register -e @expo/config",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "dsokal",
+        "email" : "dominiksokal@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.41",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.41_1596534347292_0.4957238044291732"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.49" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.49",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.49.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.49.tgz",
+        "shasum" : "53a7c06b3ff816695858af5730c5115b4d5344d9"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.18",
+        "@expo/config" : "3.3.2",
+        "@expo/image-utils" : "0.3.6",
+        "@expo/json-file" : "8.2.24",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.49",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.49_1600457103355_0.9097323186273603"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.51" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.51",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.51.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.51.tgz",
+        "shasum" : "a018e6cf1754de7e35ea85654cd9fca1e9892cea"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.18",
+        "@expo/config" : "3.3.4",
+        "@expo/image-utils" : "0.3.6",
+        "@expo/json-file" : "8.2.24",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.51",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.51_1600838879139_0.12582642376792452"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.50" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.50",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.50.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.50.tgz",
+        "shasum" : "f256077254831e08521d9a24058448ee927ef768"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.18",
+        "@expo/config" : "3.3.3",
+        "@expo/image-utils" : "0.3.6",
+        "@expo/json-file" : "8.2.24",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.50",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.50_1600740790591_0.5048216602747506"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.15" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.15",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.15.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.15.tgz",
+        "shasum" : "ea70dcb87a597556cd0f00beac6b4c452c6f9cbf"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.8",
+        "@expo/config" : "3.0.6",
+        "@expo/image-utils" : "0.2.18",
+        "@expo/json-file" : "8.2.8",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.15",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.15_1586200166666_0.7615469029447868"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.1.14" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.14",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.14.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.14.tgz",
+        "shasum" : "52a248a6736e20f23d6d2831be7e9a266136ac7d"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.7",
+        "@expo/config" : "3.0.5",
+        "@expo/image-utils" : "0.2.17",
+        "@expo/json-file" : "8.2.7",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.14",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.14_1586138191749_0.3386063059327271"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.1.13" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.13",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.13.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.13.tgz",
+        "shasum" : "a182e75a96101c585aa5db93681574b1d153870c"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.7",
+        "@expo/config" : "3.0.4",
+        "@expo/image-utils" : "0.2.17",
+        "@expo/json-file" : "8.2.7",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.13",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.13_1585783114258_0.5382549542657014"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.1.12" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.12",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.12.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.12.tgz",
+        "shasum" : "864613e83f48d3469e42e0640f4b5f8ca55ed025"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.7",
+        "@expo/config" : "3.0.3",
+        "@expo/image-utils" : "0.2.17",
+        "@expo/json-file" : "8.2.7",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.12",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.12_1585768327285_0.8147790543596016"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.1.56" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.56",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.56.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.56.tgz",
+        "shasum" : "e33f5c7c5ea59966fdbb8f13a6149fe710646207"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.18",
+        "@expo/config" : "3.3.9",
+        "@expo/image-utils" : "0.3.7",
+        "@expo/json-file" : "8.2.24",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.56",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.56_1601662721297_0.9052033805580801"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.11" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.11",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.11.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.11.tgz",
+        "shasum" : "da33e66f548e966544c8e45de2833d48522f1fc2"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.7",
+        "@expo/config" : "3.0.2",
+        "@expo/image-utils" : "0.2.17",
+        "@expo/json-file" : "8.2.7",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.13.4",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.11",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.11_1585757006513_0.24458949468991875"
+      },
+      "_nodeVersion" : "12.16.1"
+    },
+    "0.1.55" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.55",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.55.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.55.tgz",
+        "shasum" : "9206501132cff3570c352da1b5c68bd6b7498949"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.18",
+        "@expo/config" : "3.3.8",
+        "@expo/image-utils" : "0.3.6",
+        "@expo/json-file" : "8.2.24",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.55",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.55_1601340547517_0.9944199934074782"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.10" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.10",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.10.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.10.tgz",
+        "shasum" : "482679c583dacf91e146848a5073e87a811dd90f"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.7",
+        "@expo/config" : "3.0.1",
+        "@expo/image-utils" : "0.2.17",
+        "@expo/json-file" : "8.2.7",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "2.4.2",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.2",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "./build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.12.1",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.10",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.10_1585689394643_0.03173410679879951"
+      },
+      "_nodeVersion" : "12.13.1"
+    },
+    "0.1.54" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.54",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.54.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.54.tgz",
+        "shasum" : "b80ac8382c5ac2460c23ae18afbf77b908925587"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.18",
+        "@expo/config" : "3.3.7",
+        "@expo/image-utils" : "0.3.6",
+        "@expo/json-file" : "8.2.24",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.54",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.54_1601319841220_0.6605193824433453"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.53" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.53",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.53.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.53.tgz",
+        "shasum" : "5c5d284945f959ae59b2497cca31bf09d9c62636"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.18",
+        "@expo/config" : "3.3.6",
+        "@expo/image-utils" : "0.3.6",
+        "@expo/json-file" : "8.2.24",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.53",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.53_1600989542132_0.13449401849388165"
+      },
+      "_nodeVersion" : "14.6.0"
+    },
+    "0.1.52" : {
+      "name" : "expo-optimize",
+      "description" : "Compress the assets in your project",
+      "version" : "0.1.52",
+      "repository" : {
+        "type" : "git",
+        "url" : "git+https://github.com/expo/expo-cli.git",
+        "directory" : "packages/expo-optimize"
+      },
+      "main" : "build",
+      "dist" : {
+        "tarball" : "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/fxo-cio-ies-npm-virtual/expo-optimize/-/expo-optimize-0.1.52.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fexpo-optimize%2F-%2Fexpo-optimize-0.1.52.tgz",
+        "shasum" : "aab5fbcddbe5000d7b907f0683b578f14ce9e3e8"
+      },
+      "devDependencies" : {
+        "@expo/babel-preset-cli" : "0.2.18",
+        "@expo/config" : "3.3.5",
+        "@expo/image-utils" : "0.3.6",
+        "@expo/json-file" : "8.2.24",
+        "@types/node" : "^12.6.8",
+        "@zeit/ncc" : "^0.20.5",
+        "chalk" : "^4.0.0",
+        "commander" : "2.20.0",
+        "cross-spawn" : "6.0.5",
+        "glob" : "7.1.6",
+        "pretty-bytes" : "5.2.0",
+        "rimraf" : "2.6.3",
+        "tempy" : "0.3.0",
+        "update-check" : "1.5.3"
+      },
+      "license" : "MIT",
+      "bin" : {
+        "expo-optimize" : "build/index.js"
+      },
+      "directories" : {
+      },
+      "scripts" : {
+        "prepare" : "yarn run clean && yarn run build:prod",
+        "lint" : "eslint .",
+        "watch" : "yarn run build -w",
+        "build" : "ncc build ./src/index.ts -o build/",
+        "build:prod" : "ncc build ./src/index.ts -o build/ --minify --no-cache --no-source-map-register",
+        "clean" : "rimraf ./build/"
+      },
+      "preferGlobal" : true,
+      "_npmVersion" : "6.14.6",
+      "_npmUser" : {
+        "name" : "brentvatne",
+        "email" : "brentvatne@gmail.com"
+      },
+      "_id" : "expo-optimize@0.1.52",
+      "_hasShrinkwrap" : false,
+      "_npmOperationalInternal" : {
+        "host" : "s3://npm-registry-packages",
+        "tmp" : "tmp/expo-optimize_0.1.52_1600986509225_0.7675156426482039"
+      },
+      "_nodeVersion" : "14.6.0"
+    }
+  },
+  "readme" : "<!-- Title -->\n<h1 align=\"center\">\n\uD83D\uDC4B Welcome to <br><code>expo-optimize</code>\n</h1>\n\n<!-- Header -->\n\n<p align=\"center\">\n    <b>Compress the assets in your project</b>\n    <br/>\n    <br/>\n    <a aria-label=\"Circle CI\" href=\"https://circleci.com/gh/expo/expo-cli/tree/master\">\n        <img alt=\"Circle CI\" src=\"https://flat.badgen.net/circleci/github/expo/expo-cli?label=Circle%20CI&labelColor=555555&icon=circleci\">\n    </a>\n</p>\n\n---\n\n<!-- Body -->\n\nThis library uses the natively powered package [Sharp](https://sharp.pixelplumbing.com) behind the scenes to optimally reduce your project's assets for use in an app or website.\n\n\uD83D\uDC4B **Notice:** This package is not limited to Expo projects! This can be used with projects bootstrapped with community CLIs like [ignite](https://github.com/infinitered/ignite) by Infinite Red, or [react-native-cli](https://github.com/react-native-community/cli) by the React Native community.\n\n## \uD83D\uDE80 Usage\n\n```sh\n# Run this once to install the sharp image processing utility.\n# If this cannot be installed on your computer then you won't be able to optimize images.\nnpm install -g sharp-cli\n\n# To optimize images simply run this\nnpx expo-optimize <project-directory> [options]\n```\n\n## \uD83E\uDD14 Why?\n\nWe created `optimize` to improve our docs and websites (Next, Gatsby, React), and our native apps (React & Expo). Optimizing images can noticeable improve your native app and website's **TTI** (or time-to-interaction) which means less time on splash screens and quicker delivery over poor network connections.\n\n## ⚙️ Options\n\nFor more information run `npx expo-optimize --help` (or `-h`)\n\n| Shortcut | Flag        | Input       | Description                                                                   | Default                                                 |\n| -------- | ----------- | ----------- | ----------------------------------------------------------------------------- | ------------------------------------------------------- |\n| `-q`     | `--quality` | `[number]`  | The quality each image will attempt to be reduced to                          | `80`                                                    |\n| `-i`     | `--include` | `[pattern]` | Include only assets that match this glob pattern relative to the project root | [`expo.assetBundlePatterns: []`][abp] in the `app.json` |\n| `-e`     | `--exclude` | `[pattern]` | Exclude all assets that match this glob pattern relative to the project root  | `'**/node_modules/**', '**/ios/**', '**/android/**'`    |\n| `-s`     | `--save`    |             | Save the original assets with a .orig extension                               |                                                         |\n| `-h`     | `--help`    |             | output usage information                                                      |                                                         |\n| `-V`     | `--version` |             | output the version number                                                     |                                                         |\n\n## \uD83D\uDCDA Further Reading\n\nRead more about how this package works here: [Image compression in Expo projects](https://blog.expo.io/image-compression-with-expo-cli-d32d15cc8b73).\n\n## Related\n\n- [sharp](https://sharp.pixelplumbing.com/) - native image editing library for node\n- [expo-cli](https://docs.expo.io/workflow/expo-cli/) - the original location for this command\n  <!-- - [react-native-cli optimize](https://github.com/react-native-community/cli/pull/419) - an alias for this command -->\n\n## License\n\nThe Expo source code is made available under the [MIT license](LICENSE). Some of the dependencies are licensed differently, with the BSD license, for example.\n\n<!-- Footer -->\n\n---\n\n<p>\n    <a aria-label=\"sponsored by expo\" href=\"http://expo.io\">\n        <img src=\"https://img.shields.io/badge/Sponsored_by-Expo-4630EB.svg?style=for-the-badge&logo=EXPO&labelColor=000&logoColor=fff\" target=\"_blank\" />\n    </a>\n    <a aria-label=\"expo-optimize is free to use\" href=\"/LICENSE\" target=\"_blank\">\n        <img align=\"right\" alt=\"License: MIT\" src=\"https://img.shields.io/badge/License-MIT-success.svg?style=for-the-badge&color=33CC12\" target=\"_blank\" />\n    </a>\n</p>\n\n[abp]: https://docs.expo.io/versions/latest/config/app/#assetbundlepatterns\n",
+  "time" : {
+    "0.0.6" : "2020-01-08T18:30:43.811Z",
+    "0.1.24-alpha.0" : "2020-05-04T22:27:29.232Z",
+    "0.0.7" : "2020-01-14T13:29:26.058Z",
+    "0.0.4" : "2019-12-18T00:12:28.194Z",
+    "0.0.5" : "2020-01-06T23:21:50.075Z",
+    "0.1.19" : "2020-04-16T05:00:02.628Z",
+    "0.1.18" : "2020-04-15T00:48:42.578Z",
+    "0.0.8" : "2020-02-03T21:14:54.605Z",
+    "0.1.17" : "2020-04-11T00:11:47.026Z",
+    "0.1.16" : "2020-04-08T13:35:36.541Z",
+    "0.0.2" : "2019-11-26T07:37:49.842Z",
+    "0.0.3" : "2019-12-06T20:03:28.028Z",
+    "0.0.0" : "2019-11-18T21:51:07.604Z",
+    "0.0.1" : "2019-11-21T20:22:57.364Z",
+    "0.1.26" : "2020-05-12T23:14:04.557Z",
+    "modified" : "2020-10-02T18:18:44.746Z",
+    "0.1.25" : "2020-05-11T20:27:45.674Z",
+    "0.1.24" : "2020-05-08T04:30:54.656Z",
+    "0.1.23" : "2020-04-29T21:28:26.012Z",
+    "0.1.22" : "2020-04-25T23:28:52.111Z",
+    "0.1.21" : "2020-04-23T02:09:09.387Z",
+    "0.1.20" : "2020-04-19T17:25:16.220Z",
+    "0.1.29" : "2020-05-15T19:33:16.674Z",
+    "created" : "2019-11-18T21:51:07.496Z",
+    "0.1.28" : "2020-05-15T05:37:28.784Z",
+    "0.1.27" : "2020-05-15T01:40:51.496Z",
+    "0.1.37" : "2020-06-25T20:07:33.652Z",
+    "0.1.36" : "2020-06-24T00:55:41.564Z",
+    "0.1.35" : "2020-06-19T08:37:29.006Z",
+    "0.1.34" : "2020-06-18T08:15:29.232Z",
+    "0.1.33" : "2020-06-15T12:41:54.569Z",
+    "0.1.32" : "2020-06-02T11:05:34.691Z",
+    "0.1.31" : "2020-05-27T11:51:16.733Z",
+    "0.1.30" : "2020-05-26T12:16:41.537Z",
+    "0.1.5" : "2020-03-14T23:09:24.266Z",
+    "0.1.6" : "2020-03-21T01:11:02.814Z",
+    "0.1.3" : "2020-03-12T20:26:03.209Z",
+    "0.1.4" : "2020-03-14T18:37:45.314Z",
+    "0.1.9" : "2020-03-31T21:07:01.542Z",
+    "0.1.7" : "2020-03-26T20:37:22.488Z",
+    "0.1.39" : "2020-07-14T11:10:00.894Z",
+    "0.1.8" : "2020-03-27T03:48:04.018Z",
+    "0.1.38" : "2020-07-07T18:39:58.089Z",
+    "0.1.1" : "2020-02-12T23:27:44.618Z",
+    "0.1.2" : "2020-03-07T01:55:13.765Z",
+    "0.1.0" : "2020-02-11T02:29:36.621Z",
+    "0.1.40" : "2020-07-30T20:46:16.353Z",
+    "0.1.48" : "2020-09-17T20:39:12.373Z",
+    "0.1.47" : "2020-09-08T12:22:44.140Z",
+    "0.1.46" : "2020-09-01T23:48:57.946Z",
+    "0.1.45" : "2020-08-27T17:26:21.605Z",
+    "0.1.44" : "2020-08-26T10:14:41.471Z",
+    "0.1.43" : "2020-08-18T12:04:45.821Z",
+    "0.1.42" : "2020-08-11T08:29:36.015Z",
+    "0.1.41" : "2020-08-04T09:45:47.593Z",
+    "0.1.49" : "2020-09-18T19:25:03.632Z",
+    "0.1.51" : "2020-09-23T05:27:59.333Z",
+    "0.1.50" : "2020-09-22T02:13:10.822Z",
+    "0.1.15" : "2020-04-06T19:09:26.883Z",
+    "0.1.14" : "2020-04-06T01:56:31.966Z",
+    "0.1.13" : "2020-04-01T23:18:34.460Z",
+    "0.1.12" : "2020-04-01T19:12:07.545Z",
+    "0.1.56" : "2020-10-02T18:18:41.551Z",
+    "0.1.11" : "2020-04-01T16:03:26.881Z",
+    "0.1.55" : "2020-09-29T00:49:07.733Z",
+    "0.1.10" : "2020-03-31T21:16:34.796Z",
+    "0.1.54" : "2020-09-28T19:04:01.531Z",
+    "0.1.53" : "2020-09-24T23:19:02.412Z",
+    "0.1.52" : "2020-09-24T22:28:29.460Z"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "git+https://github.com/expo/expo-cli.git",
+    "directory" : "packages/expo-optimize"
+  },
+  "users" : {
+  },
+  "readmeFilename" : "README.md",
+  "license" : "MIT"
+}
